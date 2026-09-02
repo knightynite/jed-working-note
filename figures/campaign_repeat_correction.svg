@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Public repeat-family correction across fifteen draws</title>
+  <desc id="desc">Eleven earlier public draws cluster around a mean of 119.606364. A fresh batch of four, author-reported as designated before its scores were read, has mean 114.406250. Its 3 of 1365 rank is a within-family conditional calibration, not a multiplicity-adjusted campaign p-value. The observed shift retired the stationary forecast without identifying a cause.</desc>
+  <rect width="1200" height="500" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+    .title { font-size: 28px; font-weight: 700; text-anchor: middle; }
+    .label { font-size: 19px; font-weight: 700; }
+    .small { font-size: 17px; }
+    .grid { stroke: #d5dce5; stroke-width: 2; }
+    .axis { stroke: #52606d; stroke-width: 3; }
+    .prior { fill: #2864a8; stroke: #2864a8; stroke-width: 4; }
+    .fresh { fill: #c35a16; stroke: #c35a16; stroke-width: 4; }
+    .boundary { stroke: #4d565f; stroke-width: 3; }
+    .panel { fill: #f7f9fc; stroke: #9aa7b3; stroke-width: 2; rx: 12; }
+  </style>
+  <text class="title" x="600" y="42">One byte-identical family; the forecast, not the cause, was retired</text>
+  <rect class="panel" x="55" y="65" width="1090" height="350"/>
+  <line class="grid" x1="95" y1="125" x2="1110" y2="125"/>
+  <line class="grid" x1="95" y1="191" x2="1110" y2="191"/>
+  <line class="grid" x1="95" y1="257" x2="1110" y2="257"/>
+  <line class="grid" x1="95" y1="323" x2="1110" y2="323"/>
+  <line class="axis" x1="95" y1="90" x2="95" y2="380"/>
+  <line class="axis" x1="95" y1="380" x2="1110" y2="380"/>
+  <text class="small" x="62" y="131">122</text>
+  <text class="small" x="62" y="197">119</text>
+  <text class="small" x="62" y="263">116</text>
+  <text class="small" x="62" y="329">113</text>
+  <text class="small" x="58" y="368">score</text>
+  <polyline class="prior" fill="none" points="110,150 180,126 250,194 320,201 390,150 460,194 530,247 600,173 670,150 740,215 810,150"/>
+  <polyline class="fresh" fill="none" points="880,291 950,322 1020,208 1090,347"/>
+  <circle class="prior" cx="110" cy="150" r="6"/>
+  <circle class="prior" cx="180" cy="126" r="6"/>
+  <circle class="prior" cx="250" cy="194" r="6"/>
+  <circle class="prior" cx="320" cy="201" r="6"/>
+  <circle class="prior" cx="390" cy="150" r="6"/>
+  <circle class="prior" cx="460" cy="194" r="6"/>
+  <circle class="prior" cx="530" cy="247" r="6"/>
+  <circle class="prior" cx="600" cy="173" r="6"/>
+  <circle class="prior" cx="670" cy="150" r="6"/>
+  <circle class="prior" cx="740" cy="215" r="6"/>
+  <circle class="prior" cx="810" cy="150" r="6"/>
+  <rect class="fresh" x="873" y="284" width="14" height="14" rx="2"/>
+  <rect class="fresh" x="943" y="315" width="14" height="14" rx="2"/>
+  <rect class="fresh" x="1013" y="201" width="14" height="14" rx="2"/>
+  <rect class="fresh" x="1083" y="340" width="14" height="14" rx="2"/>
+  <line class="boundary" x1="845" y1="88" x2="845" y2="380"/>
+  <line class="prior" x1="110" y1="178" x2="810" y2="178"/>
+  <line class="fresh" x1="880" y1="292" x2="1090" y2="292"/>
+  <text class="label" x="118" y="104">Earlier 11: mean 119.606364</text>
+  <text class="label" x="866" y="104">Fresh 4</text>
+  <text class="small" x="868" y="127">mean 114.406250</text>
+  <text class="small" x="110" y="407">1</text>
+  <text class="small" x="800" y="407">11</text>
+  <text class="small" x="875" y="407">12</text>
+  <text class="small" x="1082" y="407">15</text>
+  <text class="small" x="600" y="430" text-anchor="middle">Ordered hosted draw</text>
+  <text class="small" x="600" y="458" text-anchor="middle">Conditional on the author-reported pre-score designation: within-family rank 3/1365; not multiplicity-adjusted.</text>
+  <text class="small" x="600" y="486" text-anchor="middle">Operational result: retire the stationary forecast; no evaluator, runtime, parser, model, or policy cause is identified.</text>
+</svg>

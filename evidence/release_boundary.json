@@ -1,0 +1,44 @@
+{
+ "excluded": [
+  "attack prompts or payloads",
+  "credentials or authentication material",
+  "private traces or private score inference",
+  "non-public competitor artifacts, attack code or prompts, and performance or rank comparisons",
+  "instructions for attacking real systems",
+  "participant-written mocks presented as official implementations",
+  "unsupported best-of-two reducer claims",
+  "withdrawn metadata-channel claims"
+ ],
+ "in_scope": [
+  "competition methodology",
+  "harmless synthetic fixtures and computations",
+  "official competition facts with dated source identities",
+  "bounded proposition-level citation of public competition notes",
+  "participant-owned public and private aggregate outcomes for the author's own submissions, without submission identifiers or attack content",
+  "benchmark design recommendations",
+  "explicit limitations and nonclaims"
+ ],
+ "publication_gate_requirements": [
+  "author_team_contribution_approved",
+  "current_working_note_mechanics_and_uncertainty_recorded",
+  "independent_exact_release_audits_passed",
+  "license_and_copyright_holder_selected",
+  "owner_publication_approval_received",
+  "payload_safety_scan_passed",
+  "rendered_preview_reviewed",
+  "rights_attestation_bound",
+  "terminal_competition_facts_captured"
+ ],
+ "schema": "jed-working-note-v5-release-boundary-v1",
+ "status": "local_pre_close_draft_not_release_authorized",
+ "synthetic_workbench": {
+  "accepted_seed_manifest_bytes": 1547,
+  "accepted_seed_manifest_sha256": "57971eec6c8ee639af3f32190e38c28486110b67022ddc42ce95149dbb0a4a83",
+  "first_acceptance_disposition": "FIRE laboratory acceptance gate; HOLD publication",
+  "integration_change": "README/status metadata only; code, fixtures, expected results, and tests unchanged",
+  "manifest_bytes": 1561,
+  "manifest_sha256": "eeaf7b2819c6b78eaaa4c8f21a4016ffb019aeaa5a483e75093ebb241a5e0333",
+  "relative_path": "synthetic_workbench",
+  "second_acceptance_disposition": "FIRE laboratory acceptance gate; HOLD publication"
+ }
+}

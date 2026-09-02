@@ -1,0 +1,57 @@
+{
+  "schema": "jed-v5-synthetic-policy-cases-v1",
+  "description": "Harmless fictional actions for testing aggregate non-identification.",
+  "cases": [
+    {
+      "id": "plain_local_publish",
+      "control": "positive_allow",
+      "events": [
+        {"operation":"publish","source":"local","payload":"plain","recipient":"sandbox","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "tagged_local_publish",
+      "control": "tagged_differential",
+      "events": [
+        {"operation":"publish","source":"local","payload":"tagged","recipient":"sandbox","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "external_plain_publish",
+      "control": "source_context",
+      "events": [
+        {"operation":"publish","source":"external","payload":"plain","recipient":"sandbox","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "inspect_then_publish",
+      "control": "provenance_positive",
+      "events": [
+        {"operation":"inspect","source":"external","payload":"plain","recipient":"sandbox","user_confirmed":false},
+        {"operation":"publish","source":"local","payload":"plain","recipient":"sandbox","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "other_recipient",
+      "control": "recipient_differential",
+      "events": [
+        {"operation":"publish","source":"local","payload":"plain","recipient":"other","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "two_publishes",
+      "control": "stateful_differential",
+      "events": [
+        {"operation":"publish","source":"local","payload":"plain","recipient":"sandbox","user_confirmed":false},
+        {"operation":"publish","source":"local","payload":"plain","recipient":"sandbox","user_confirmed":false}
+      ]
+    },
+    {
+      "id": "inspect_only",
+      "control": "negative_no_publish",
+      "events": [
+        {"operation":"inspect","source":"external","payload":"plain","recipient":"sandbox","user_confirmed":false}
+      ]
+    }
+  ]
+}

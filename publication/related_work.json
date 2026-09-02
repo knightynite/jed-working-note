@@ -1,0 +1,122 @@
+{
+ "entries": [
+  {
+   "authors": "Edoardo Debenedetti, Jie Zhang, Mislav Balunovic, Luca Beurer-Kellner, Marc Fischer, Florian Tramer",
+   "id": "AgentDojo",
+   "proposition_used": "an extensible tool-agent environment can jointly represent tasks, security cases, attacks, and defenses",
+   "review_status": "full_text_reviewed",
+   "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+   "url": "https://arxiv.org/abs/2406.13352",
+   "year": 2024
+  },
+  {
+   "authors": "Qiusi Zhan, Zhixiang Liang, Zifan Ying, Daniel Kang",
+   "id": "InjecAgent",
+   "proposition_used": "indirect prompt injection can be benchmarked across many tool-integrated scenarios, with success reported both among valid outputs and across all cases",
+   "review_status": "full_text_reviewed",
+   "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+   "url": "https://arxiv.org/abs/2403.02691",
+   "year": 2024
+  },
+  {
+   "authors": "Preetum Nakkiran, Jaroslaw Blasiok",
+   "id": "Generic-Holdout",
+   "proposition_used": "independent holdout samples, limited binary validation feedback, and a stopping rule can bound false discoveries under the paper's assumptions",
+   "review_status": "full_text_reviewed",
+   "title": "The Generic Holdout: Preventing False-Discoveries in Adaptive Data Science",
+   "url": "https://arxiv.org/abs/1809.05596",
+   "year": 2018
+  },
+  {
+   "authors": "Avrim Blum, Moritz Hardt",
+   "id": "Ladder",
+   "proposition_used": "sequential adaptive submissions can overfit a public leaderboard, and selective score release can improve leaderboard accuracy under declared assumptions",
+   "review_status": "full_text_reviewed",
+   "title": "The Ladder: A Reliable Leaderboard for Machine Learning Competitions",
+   "url": "https://arxiv.org/abs/1502.04585",
+   "year": 2015
+  },
+  {
+   "authors": "Cynthia Dwork, Vitaly Feldman, Moritz Hardt, Toniann Pitassi, Omer Reingold, Aaron Roth",
+   "id": "Reusable-Holdout",
+   "proposition_used": "a holdout can be reused for adaptively chosen analyses through a differentially private access mechanism under the paper's assumptions",
+   "review_status": "full_text_reviewed",
+   "title": "The reusable holdout: Preserving validity in adaptive data analysis",
+   "url": "https://doi.org/10.1126/science.aaa9375",
+   "year": 2015
+  },
+  {
+   "authors": "Sally Hopewell et al.",
+   "id": "CONSORT-2025",
+   "proposition_used": "analysis populations, missing outcomes, and prespecified outcomes should be explicitly reported",
+   "review_status": "statement_and_explanation_reviewed",
+   "title": "CONSORT 2025 statement: updated guideline for reporting randomised trials",
+   "url": "https://www.bmj.com/content/389/bmj-2024-081123",
+   "year": 2025
+  },
+  {
+   "authors": "Loes Kruger, Sebastian Junges, Jurriaan Rot",
+   "id": "Small-Test-Suites",
+   "proposition_used": "smaller conformance suites can expose counterexamples to an incorrect black-box behavioral hypothesis under declared assumptions",
+   "review_status": "full_text_reviewed",
+   "title": "Small Test Suites for Active Automata Learning",
+   "url": "https://arxiv.org/abs/2401.12703",
+   "year": 2024
+  },
+  {
+   "authors": "Xander (Kaggle canqiang)",
+   "id": "JED-Xander",
+   "proposition_used": "source-level analysis characterizes observable predicate reachability and its benchmark-design implications",
+   "review_status": "public_note_proposition_reviewed",
+   "title": "The Scored Attack Surface Collapses to a Single Predicate",
+   "url": "https://www.kaggle.com/writeups/canqiang/the-scored-attack-surface-collapses-to-a-single-pr",
+   "year": 2026
+  },
+  {
+   "authors": "radiant-allomancer",
+   "id": "JED-Radiant",
+   "proposition_used": "public-source analysis describes payload and reasoning-channel weaknesses together with throughput and defensive implications",
+   "review_status": "public_note_proposition_reviewed",
+   "title": "Reading the Objective from Source: A Throughput-Bound Exfiltration Study",
+   "url": "https://www.kaggle.com/writeups/radiantallomancer/reading-the-objective-from-source-a-throughput-bo",
+   "year": 2026
+  },
+  {
+   "authors": "Pilkwang Kim",
+   "id": "JED-Pilkwang",
+   "proposition_used": "public measurement notebook demonstrates a budget-aware validation-fill attack loop with an explicit replay-time deadline",
+   "review_status": "public_notebook_proposition_reviewed",
+   "title": "AI Agent - 📘 Working Note",
+   "url": "https://www.kaggle.com/code/pilkwang/ai-agent-working-note",
+   "year": 2026
+  },
+  {
+   "authors": "Cleanor Labs",
+   "id": "JED-Cleanor",
+   "proposition_used": "controlled public negative results motivate a throughput framing and explicitly acknowledge repeated-evaluation noise",
+   "review_status": "public_note_proposition_reviewed",
+   "title": "Negative Results and a Throughput-Optimality Framing for the Public Attack",
+   "url": "https://www.kaggle.com/writeups/cleanorlabs/negative-results-and-a-throughput-optimality-frami",
+   "year": 2026
+  },
+  {
+   "authors": "Team oNanachii",
+   "id": "JED-oNanachii",
+   "proposition_used": "bounded search under coarse feedback combines controlled negative results with explicit evidence classes and claim limits",
+   "review_status": "public_note_proposition_reviewed",
+   "title": "[Working Note] Bounded Search Under Invisible Feedback: Shrinking the Attack-Design Space with Controlled Negative Results",
+   "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/737600",
+   "year": 2026
+  }
+ ],
+ "policy": "No title-only or memory-only attribution may enter the publication draft.",
+ "required_topics": [
+  "prompt-injection and tool-agent security benchmarks",
+  "hidden-test and adaptive-overfitting evaluation",
+  "intention-to-treat and attrition bias",
+  "behavioral policy identification or conformance testing",
+  "contemporaneous competition methods and methodological boundaries"
+ ],
+ "schema": "jed-working-note-v5-related-work-v1",
+ "status": "initial_proposition_review_complete_final_link_check_pending"
+}

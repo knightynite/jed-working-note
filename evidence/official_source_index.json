@@ -1,0 +1,61 @@
+{
+  "schema": "jed-working-note-v5-official-source-index-v1",
+  "status": "capture_identities_only_bodies_excluded",
+  "capture_manifest": {
+    "bytes": 3811,
+    "sha256": "66443ce777c60822d3d7b1334d72cd26dfebbb7b7cc91e179e29c6530c7a7b75"
+  },
+  "sources": [
+    {
+      "id": "Official-Rules",
+      "title": "Competition Rules",
+      "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/rules",
+      "capture_bytes": 37372,
+      "capture_sha256": "da4b0377d5f60215d3ab9205a4b0f24891c2432a40ae3f8114b76a625d281f6a",
+      "captured_on": "2026-08-25",
+      "capture_scope": "full Rules page capture",
+      "body_in_release": false
+    },
+    {
+      "id": "Official-Evaluation",
+      "title": "Competition Evaluation",
+      "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview/evaluation",
+      "capture_bytes": 3370,
+      "capture_sha256": "3c85656c0d37fb50946f867e68965aafcdfbcfdfcde1fc86921396480909e931",
+      "captured_on": "2026-08-25",
+      "capture_scope": "full Evaluation page capture",
+      "body_in_release": false
+    },
+    {
+      "id": "Official-Timeline",
+      "title": "Competition Timeline",
+      "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview/timeline",
+      "capture_bytes": 558,
+      "capture_sha256": "1d915a5c28772202cbe9961eaee4ff456cc19e211fec2d51e174296d199fd07d",
+      "captured_on": "2026-08-25",
+      "capture_scope": "Timeline section capture",
+      "body_in_release": false
+    },
+    {
+      "id": "Official-Working-Note-Criteria",
+      "title": "Working Note Judging Criteria",
+      "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview/evaluation",
+      "capture_bytes": 1010,
+      "capture_sha256": "e6c1152c98c7bcad4a92309523da72bc9601dfb50db1afcd83bcb444bd330e53",
+      "captured_on": "2026-08-25",
+      "capture_scope": "Working Note criteria extracted from the Evaluation page capture",
+      "body_in_release": false
+    },
+    {
+      "id": "Official-Prizes",
+      "title": "Competition Prizes",
+      "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview",
+      "capture_bytes": 317,
+      "capture_sha256": "8c5074e8fe6567998252f2042c80652afb4ad3d45beae39a4da934802a160735",
+      "captured_on": "2026-08-25",
+      "capture_scope": "Prizes section extracted from the Overview/Rules surface",
+      "body_in_release": false
+    }
+  ],
+  "nonclaim": "A capture identity does not promise that the current live page has identical bytes."
+}

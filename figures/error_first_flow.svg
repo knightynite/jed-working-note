@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Error-first claim lifecycle</title>
+  <desc id="desc">A claim moves from lead to specified, then through identity, assignment, and control gates before support within scope. Any failed gate returns it to unresolved or retracted.</desc>
+  <rect width="1200" height="360" fill="#ffffff"/>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #17202a; }
+    .box { fill: #eef5ff; stroke: #2864a8; stroke-width: 3; rx: 14; }
+    .gate { fill: #fff7df; stroke: #a66a00; stroke-width: 3; rx: 14; }
+    .good { fill: #e9f8ef; stroke: #287a49; stroke-width: 3; rx: 14; }
+    .hold { fill: #fff0f0; stroke: #a33a3a; stroke-width: 3; rx: 14; }
+    .arrow { stroke: #44515f; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    .label { font-size: 22px; font-weight: 700; text-anchor: middle; }
+    .small { font-size: 17px; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#44515f"/>
+    </marker>
+  </defs>
+  <rect class="box" x="35" y="70" width="150" height="90"/>
+  <text class="label" x="110" y="124">Lead</text>
+  <rect class="box" x="235" y="70" width="175" height="90"/>
+  <text class="label" x="322" y="112">Specified</text>
+  <text class="small" x="322" y="139">estimand + falsifier</text>
+  <rect class="gate" x="460" y="35" width="250" height="160"/>
+  <text class="label" x="585" y="75">Promotion gates</text>
+  <text class="small" x="585" y="108">artifact identity</text>
+  <text class="small" x="585" y="134">assignment accounting</text>
+  <text class="small" x="585" y="160">controls + transfer scope</text>
+  <rect class="good" x="780" y="70" width="270" height="90"/>
+  <text class="label" x="915" y="110">Supported</text>
+  <text class="small" x="915" y="138">within declared scope</text>
+  <rect class="hold" x="475" y="255" width="220" height="70"/>
+  <text class="label" x="585" y="286">Unresolved</text>
+  <text class="small" x="585" y="310">or retracted</text>
+  <path class="arrow" d="M185 115 H230"/>
+  <path class="arrow" d="M410 115 H455"/>
+  <path class="arrow" d="M710 115 H775"/>
+  <path class="arrow" d="M585 195 V248"/>
+  <text class="small" x="735" y="99">all pass</text>
+  <text class="small" x="650" y="232">any gate fails</text>
+  <text class="small" x="600" y="348">Corrections remain addressable; failed evidence never inherits authority.</text>
+</svg>
+

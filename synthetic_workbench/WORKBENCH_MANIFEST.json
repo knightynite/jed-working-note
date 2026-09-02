@@ -1,0 +1,48 @@
+{
+  "schema": "jed-working-note-v5-synthetic-workbench-manifest-v1",
+  "status": "integrated-component",
+  "manifest_self_excluded": true,
+  "payload_file_count": 7,
+  "files": [
+    {
+      "path": "data/artifact_identity.json",
+      "bytes": 1150,
+      "sha256": "20eb773bb3eb4ba7d062adb39300a095fc94e88cdae7b6b82c6181794814da44"
+    },
+    {
+      "path": "data/itt_trials.csv",
+      "bytes": 285,
+      "sha256": "1d8cd4d3a96043a69387a3b308677a9d0816f865c6e2cc72790ad0f6942ac298"
+    },
+    {
+      "path": "data/policy_cases.json",
+      "bytes": 1956,
+      "sha256": "9fb059ccd75d4081924953068afe7f60cdd53a33f010d6812ce94170bbf13c67"
+    },
+    {
+      "path": "EXPECTED_RESULTS.json",
+      "bytes": 36594,
+      "sha256": "8183055d5ae37a2ca5ae209aaa3b59dc31b9abd60a0ebeff5e0f0a2e28c2157b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1394,
+      "sha256": "5609e65e538fa567faba659079c174a912001de9df4096b926244680cf6520cd"
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "bytes": 15738,
+      "sha256": "c8e8616739e76fccbd93c4138dabb52620ef8d458654ab0db76106a6a9b142aa"
+    },
+    {
+      "path": "tests/test_reproduce.py",
+      "bytes": 8535,
+      "sha256": "3a45f7ebacd8dabd9699c9dab9415b41625ac608efc6d5a36d0a6fe4bd5ea54f"
+    }
+  ],
+  "nonclaims": [
+    "This manifest proves self-consistency, not authorship or external authenticity.",
+    "This workbench makes no claim about the inaccessible competition private policy.",
+    "Publication authority, licensing, and rights attestations are governed by the V5 root."
+  ]
+}

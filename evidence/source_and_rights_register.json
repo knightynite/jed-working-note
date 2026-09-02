@@ -1,0 +1,91 @@
+{
+ "items": [
+  {
+   "class": "original_prose",
+   "included": true,
+   "paths": [
+    "README.md",
+    "publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "rights_basis": "author ownership or authorization must be attested before release"
+  },
+  {
+   "class": "original_synthetic_code_and_data",
+   "included": true,
+   "paths": [
+    "synthetic_workbench/"
+   ],
+   "rights_basis": "author ownership or authorization must be attested before release"
+  },
+  {
+   "class": "original_verification_metadata_and_code",
+   "included": true,
+   "paths": [
+    "EXPECTED_CAMPAIGN_SUMMARY.json",
+    "data/",
+    "evidence/campaign_provenance.json",
+    "evidence/claim_ledger.json",
+    "evidence/postclose_guardrail_divergence.json",
+    "evidence/receipts/",
+    "evidence/release_boundary.json",
+    "evidence/source_and_rights_register.json",
+    "figures/",
+    "scripts/",
+    "tests/"
+   ],
+   "rights_basis": "author ownership or authorization must be attested before release"
+  },
+  {
+   "class": "official_competition_metadata",
+   "included": true,
+   "paths": [
+    "evidence/official_source_index.json"
+   ],
+   "rights_basis": "only titles, live links, capture dates, sizes, and digests are retained here; bounded propositions are recorded in the note and claim ledger, while page bodies are excluded"
+  },
+  {
+   "class": "third_party_research_and_public_note_metadata",
+   "included": true,
+   "paths": [
+    "publication/related_work.json"
+   ],
+   "rights_basis": "bibliographic metadata, links, and bounded proposition-level summaries of research papers and public competition notes are included; source bodies are excluded"
+  },
+  {
+   "class": "release_metadata_and_detached_attestations",
+   "included": true,
+   "paths": [
+    "PAYLOAD_MANIFEST.json",
+    "LICENSE.txt",
+    "AUTHOR_ATTESTATION.json",
+    "INDEPENDENT_AUDIT_A.json",
+    "PAYLOAD_SAFETY_RECEIPT.json",
+    "OWNER_PUBLICATION_APPROVAL.json",
+    "RELEASE_ENVELOPE.json",
+    "INDEPENDENT_AUDIT_B.json"
+   ],
+   "rights_basis": "original release metadata plus owner-selected license and explicit detached attestations"
+  },
+  {
+   "class": "competition_sdk_or_response_bodies",
+   "included": false,
+   "paths": [],
+   "rights_basis": "excluded"
+  },
+  {
+   "class": "nonpublic_or_operational_competitor_material",
+   "included": false,
+   "paths": [],
+   "rights_basis": "non-public competitor artifacts, attack code or prompts, and performance or rank comparisons are excluded"
+  }
+ ],
+ "release_status": "owner_attestation_pending",
+ "required_before_release": [
+  "named public author and team attribution",
+  "contribution statement",
+  "ownership and authorization attestation",
+  "license and copyright holder",
+  "payload-manifest-bound detached release envelope"
+ ],
+ "schema": "jed-working-note-v5-source-rights-register-v1"
+}

@@ -1,0 +1,367 @@
+{
+ "claims": [
+  {
+   "class": "observation",
+   "data_anchors": [
+    "prior",
+    "fresh_author_designated_batch",
+    "exact_exchangeable_mean_rank",
+    "leave_one_out_descriptive_sensitivity",
+    "baseline_score_bank.sha256",
+    "fresh_batch_preregistration.sha256",
+    "released_values_fixture.sha256"
+   ],
+   "falsifier": "the manifested public values, family or batch designation, or exact allocation count differs; evidence shows the family or fresh batch was designated after any of the four public scores were read; or a later draw from the same byte-identical family occurred before close but is omitted from the released sequence",
+   "id": "C-CAMPAIGN-CORRECTION-001",
+   "reproduction": [
+    "python -I -B scripts/reproduce_campaign_correction.py --check EXPECTED_CAMPAIGN_SUMMARY.json",
+    "python -I -B -O scripts/reproduce_campaign_correction.py --check EXPECTED_CAMPAIGN_SUMMARY.json"
+   ],
+   "reviewer_disposition": "supported_as_bounded_public_correction_with_author_declared_provenance",
+   "rights_status": "participant-owned public outcomes; owner attestation and publication eligibility pending",
+   "scope": "one participant-owned byte-identical public-score family with author-declared source-hash provenance",
+   "source_ids": [
+    "file:EXPECTED_CAMPAIGN_SUMMARY.json",
+    "file:data/campaign_public_scores.json",
+    "file:evidence/campaign_provenance.json"
+   ],
+   "temporal_scope": "public competition outcomes captured before the 2026-09-01 close; inference remains bounded to those dated public outcomes",
+   "text_anchor": "claim:C-CAMPAIGN-CORRECTION-001"
+  },
+  {
+   "class": "observation",
+   "data_anchors": [
+    "## 5. The two guardrails ranked our artifacts in opposite orders",
+    "postclose_guardrail_divergence.observations",
+    "postclose_guardrail_divergence.derived",
+    "postclose_guardrail_divergence.capture"
+   ],
+   "falsifier": "the authenticated post-close submission records show different public or private values for either selected artifact; the two leaderboards are shown to score different executed artifacts rather than the same ones; or the observed divergence is attributable to a recorded harness error rather than to the guardrail difference",
+   "id": "C-GUARDRAIL-DIVERGENCE-001",
+   "reproduction": [
+    "Open evidence/postclose_guardrail_divergence.json and confirm both snapshots report the same public and private scores for both selected artifacts.",
+    "Confirm the better of the two private scores against the competition's published final standing for this team.",
+    "Note the recorded limit: the platform publishes only a team's best selected submission, so the collapsed artifact's private score is not independently re-readable by a third party."
+   ],
+   "reviewer_disposition": "supported_as_two_artifact_existence_result_not_a_sample",
+   "rights_status": "participant-owned public and private outcomes for the author's own submissions; owner attestation and publication eligibility pending",
+   "scope": "the author's two final selected artifacts in one competition; an existence result about public/private divergence, not an estimate of its distribution and not an identification of the private guardrail",
+   "source_ids": [
+    "file:evidence/postclose_guardrail_divergence.json",
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "public and private outcomes read after the 2026-09-01T23:59:00Z close; the private values did not exist publicly before that close",
+   "text_anchor": "claim:C-GUARDRAIL-DIVERGENCE-001"
+  },
+  {
+   "class": "author_protocol",
+   "data_anchors": [
+    "## 2. The protocol that forced it",
+    "## 4. What the scalar hides, and what the label carries"
+   ],
+   "falsifier": "a documented benchmark context where the protocol's gates are inapplicable or counterproductive",
+   "id": "C-METHOD-001",
+   "reproduction": [
+    "Inspect the claim ledger and execute the included synthetic workbench."
+   ],
+   "reviewer_disposition": "clearly_labeled_recommendation",
+   "rights_status": "original prose; owner attestation pending",
+   "scope": "recommended error-first evaluation workflow, not an empirical law",
+   "source_ids": [
+    "file:publication/WORKING_NOTE_V5_DRAFT.md",
+    "file:synthetic_workbench/EXPECTED_RESULTS.json"
+   ],
+   "temporal_scope": "author recommendation in V5",
+   "text_anchor": "claim:C-METHOD-001"
+  },
+  {
+   "class": "recommendation",
+   "data_anchors": [
+    "## 7. What benchmark builders can expose without revealing the defense"
+   ],
+   "falsifier": "a recommendation would disclose the private implementation or create unacceptable benchmark leakage",
+   "id": "C-METHOD-BUILDER-001",
+   "reproduction": [
+    "Review each recommendation against the stated responsible-disclosure boundary."
+   ],
+   "reviewer_disposition": "clearly_labeled_recommendation",
+   "rights_status": "original prose; owner attestation pending",
+   "scope": "benchmark-design recommendations that preserve private implementation secrecy",
+   "source_ids": [
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "author recommendations in V5",
+   "text_anchor": "claim:C-METHOD-BUILDER-001"
+  },
+  {
+   "class": "illustrative_decision_model",
+   "data_anchors": [
+    "## 6. Deciding without identifying"
+   ],
+   "falsifier": "additional non-neutral branches or payoffs make the two-branch reduction inadequate",
+   "id": "C-METHOD-DECISION-001",
+   "reproduction": [
+    "Expand expected payoffs for the two declared branches and rearrange the inequality."
+   ],
+   "reviewer_disposition": "conditional_and_nonempirical",
+   "rights_status": "original prose; owner attestation pending",
+   "scope": "explicit two-branch simplification only",
+   "source_ids": [
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "illustrative method; no competition-private posterior is asserted",
+   "text_anchor": "claim:C-METHOD-DECISION-001"
+  },
+  {
+   "class": "recommendation",
+   "data_anchors": [
+    "## 1. The correction",
+    "complete repeat lineage",
+    "prespecified reducer"
+   ],
+   "falsifier": "best-of-n is the prespecified estimand or a reported maximum is clearly labeled only as its selection statistic rather than expected configuration performance",
+   "id": "C-METHOD-NOISY-MAX-001",
+   "reproduction": [
+    "Inspect the manifested repeat lineage and the conditional wording in Section 8."
+   ],
+   "reviewer_disposition": "conditional_and_clearly_labeled_recommendation",
+   "rights_status": "original prose; owner attestation pending",
+   "scope": "general reporting of repeated noisy evaluations; no claim about the competition's undocumented final-selection reducer",
+   "source_ids": [
+    "file:publication/WORKING_NOTE_V5_DRAFT.md",
+    "file:data/campaign_public_scores.json",
+    "file:publication/related_work.json#entries[id=JED-Cleanor]"
+   ],
+   "temporal_scope": "author reporting recommendation in V5",
+   "text_anchor": "claim:C-METHOD-NOISY-MAX-001"
+  },
+  {
+   "class": "non_claim",
+   "data_anchors": [
+    "excluded",
+    "bounded proposition-level citation of public competition notes",
+    "non-public competitor artifacts, attack code or prompts, and performance or rank comparisons"
+   ],
+   "falsifier": "any released text or artifact includes non-public competitor artifacts, operational attack content, or a participant-versus-competitor performance or rank comparison",
+   "id": "C-NONCLAIM-COMPETITOR-001",
+   "reproduction": [
+    "python -I -B scripts/verify_release_v5.py"
+   ],
+   "reviewer_disposition": "must_hold",
+   "rights_status": "mandatory release invariant",
+   "scope": "entire V5 note and release tree",
+   "source_ids": [
+    "file:evidence/release_boundary.json#excluded",
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "mandatory invariant for every V5 state",
+   "text_anchor": "claim:C-NONCLAIM-COMPETITOR-001"
+  },
+  {
+   "class": "non_claim",
+   "data_anchors": [
+    "excluded",
+    "no causal deployment claim"
+   ],
+   "falsifier": "any text presents the synthetic examples or public outcomes as a causal deployment result",
+   "id": "C-NONCLAIM-DEPLOYMENT-001",
+   "reproduction": [
+    "python -I -B scripts/verify_release_v5.py"
+   ],
+   "reviewer_disposition": "must_hold",
+   "rights_status": "mandatory release invariant",
+   "scope": "entire V5 note and release tree",
+   "source_ids": [
+    "file:evidence/release_boundary.json#excluded",
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "mandatory invariant for every V5 state",
+   "text_anchor": "claim:C-NONCLAIM-DEPLOYMENT-001"
+  },
+  {
+   "class": "non_claim",
+   "data_anchors": [
+    "release_boundary.excluded",
+    "scope.private_policy_claims"
+   ],
+   "falsifier": "any text or artifact asserts or reconstructs inaccessible private behavior",
+   "id": "C-NONCLAIM-PRIVATE-001",
+   "reproduction": [
+    "python -I -B scripts/verify_release_v5.py"
+   ],
+   "reviewer_disposition": "must_hold",
+   "rights_status": "mandatory release invariant",
+   "scope": "entire V5 note and release tree",
+   "source_ids": [
+    "file:evidence/release_boundary.json",
+    "file:synthetic_workbench/EXPECTED_RESULTS.json#scope"
+   ],
+   "temporal_scope": "mandatory invariant for every V5 state",
+   "text_anchor": "claim:C-NONCLAIM-PRIVATE-001"
+  },
+  {
+   "class": "non_claim",
+   "data_anchors": [
+    "official_source_index.json#sources[id=Official-Rules]"
+   ],
+   "falsifier": "an authenticated official source specifies the reducer",
+   "id": "C-NONCLAIM-REDUCER-001",
+   "reproduction": [
+    "Review the current official rules and signed-in workflow after close."
+   ],
+   "reviewer_disposition": "must_hold",
+   "rights_status": "mandatory release invariant until official evidence changes",
+   "scope": "multiple final selections",
+   "source_ids": [
+    "Official-Rules"
+   ],
+   "temporal_scope": "holds until an authenticated official source changes the evidence",
+   "text_anchor": "claim:C-NONCLAIM-REDUCER-001"
+  },
+  {
+   "class": "non_claim",
+   "data_anchors": [
+    "excluded",
+    "no claim of transfer to real systems"
+   ],
+   "falsifier": "any text asserts real-system applicability or exploitability from the bounded synthetic laboratory",
+   "id": "C-NONCLAIM-TRANSFER-001",
+   "reproduction": [
+    "python -I -B scripts/verify_release_v5.py"
+   ],
+   "reviewer_disposition": "must_hold",
+   "rights_status": "mandatory release invariant",
+   "scope": "entire V5 note and release tree",
+   "source_ids": [
+    "file:evidence/release_boundary.json#excluded",
+    "file:publication/WORKING_NOTE_V5_DRAFT.md"
+   ],
+   "temporal_scope": "mandatory invariant for every V5 state",
+   "text_anchor": "claim:C-NONCLAIM-TRANSFER-001"
+  },
+  {
+   "class": "official_fact",
+   "data_anchors": [
+    "official_source_index.json#sources[id=Official-Evaluation]"
+   ],
+   "falsifier": "a later official correction, a changed live page, or evidence the dated capture identity is inauthentic",
+   "id": "C-OFFICIAL-001",
+   "reproduction": [
+    "Open the live Official-Evaluation URL and compare the stated propositions; the dated capture body is author-held and not distributed."
+   ],
+   "reviewer_disposition": "supported_with_dated_capture_scope",
+   "rights_status": "metadata and live link included; capture body excluded",
+   "scope": "captured Evaluation page dated 2026-08-25",
+   "source_ids": [
+    "Official-Evaluation"
+   ],
+   "temporal_scope": "official surface captured 2026-08-25; final mechanics verification does not extend this proposition beyond the dated capture unless it is explicitly recaptured",
+   "text_anchor": "claim:C-OFFICIAL-001"
+  },
+  {
+   "class": "released_computation",
+   "data_anchors": [
+    "artifact_identity.observations",
+    "artifact_identity.fixture"
+   ],
+   "falsifier": "matching identity fields or a checker result that admits the drifted observation",
+   "id": "C-SYNTH-IDENTITY-001",
+   "reproduction": [
+    "python -I -B synthetic_workbench/scripts/reproduce.py --check synthetic_workbench/EXPECTED_RESULTS.json"
+   ],
+   "reviewer_disposition": "supported_in_synthetic_scope",
+   "rights_status": "original synthetic material; owner attestation pending",
+   "scope": "declared synthetic artifact-identity fixture only",
+   "source_ids": [
+    "file:synthetic_workbench/EXPECTED_RESULTS.json#artifact_identity"
+   ],
+   "temporal_scope": "exact manifested V5 synthetic fixture",
+   "text_anchor": "claim:C-SYNTH-IDENTITY-001"
+  },
+  {
+   "class": "released_computation",
+   "data_anchors": [
+    "intention_to_treat.completion_only_delta",
+    "intention_to_treat.intention_to_treat_delta"
+   ],
+   "falsifier": "fixture, denominator, or declared failure handling differs",
+   "id": "C-SYNTH-ITT-001",
+   "reproduction": [
+    "python -I -B synthetic_workbench/scripts/reproduce.py --check synthetic_workbench/EXPECTED_RESULTS.json"
+   ],
+   "reviewer_disposition": "supported_in_synthetic_scope",
+   "rights_status": "original synthetic material; owner attestation pending",
+   "scope": "16 declared synthetic trials",
+   "source_ids": [
+    "file:synthetic_workbench/EXPECTED_RESULTS.json#intention_to_treat"
+   ],
+   "temporal_scope": "exact manifested V5 synthetic fixture",
+   "text_anchor": "claim:C-SYNTH-ITT-001"
+  },
+  {
+   "class": "released_computation",
+   "data_anchors": [
+    "test_semantic_mutants_fail_closed",
+    "test_injected_state_leak_fails_closed",
+    "test_one_byte_fixture_mutation_fails_check",
+    "test_stale_expected_result_fails_check"
+   ],
+   "falsifier": "any declared mutant passes or the test suite discovers fewer than 11 tests",
+   "id": "C-SYNTH-MUTATION-001",
+   "reproduction": [
+    "python -I -B -m unittest discover -s synthetic_workbench/tests -v",
+    "python -I -B -O -m unittest discover -s synthetic_workbench/tests -v"
+   ],
+   "reviewer_disposition": "supported_by_normal_and_optimized_tests",
+   "rights_status": "original synthetic material; owner attestation pending",
+   "scope": "declared synthetic verifier mutation suite",
+   "source_ids": [
+    "file:synthetic_workbench/tests/test_reproduce.py"
+   ],
+   "temporal_scope": "exact manifested V5 synthetic tests",
+   "text_anchor": "claim:C-SYNTH-MUTATION-001"
+  },
+  {
+   "class": "released_computation",
+   "data_anchors": [
+    "policy_nonidentification.aggregate_equivalence_groups",
+    "policy_nonidentification.policy_traces"
+   ],
+   "falsifier": "either named pair lacks aggregate equality or has identical full decision traces",
+   "id": "C-SYNTH-POLICY-001",
+   "reproduction": [
+    "python -I -B synthetic_workbench/scripts/reproduce.py --check synthetic_workbench/EXPECTED_RESULTS.json"
+   ],
+   "reviewer_disposition": "supported_in_synthetic_scope",
+   "rights_status": "original synthetic material; owner attestation pending",
+   "scope": "declared seven-case, eight-policy synthetic family",
+   "source_ids": [
+    "file:synthetic_workbench/EXPECTED_RESULTS.json#policy_nonidentification"
+   ],
+   "temporal_scope": "exact manifested V5 synthetic family only",
+   "text_anchor": "claim:C-SYNTH-POLICY-001"
+  },
+  {
+   "class": "released_computation",
+   "data_anchors": [
+    "policy_nonidentification.pairwise_witnesses",
+    "policy_nonidentification.minimal_distinguishing_case_ids"
+   ],
+   "falsifier": "a policy pair has no differing case signature or the returned suite fails separation",
+   "id": "C-SYNTH-WITNESS-001",
+   "reproduction": [
+    "python -I -B synthetic_workbench/scripts/reproduce.py --check synthetic_workbench/EXPECTED_RESULTS.json"
+   ],
+   "reviewer_disposition": "supported_in_synthetic_scope",
+   "rights_status": "original synthetic material; owner attestation pending",
+   "scope": "declared seven-case, eight-policy synthetic family",
+   "source_ids": [
+    "file:synthetic_workbench/EXPECTED_RESULTS.json#policy_nonidentification"
+   ],
+   "temporal_scope": "exact manifested V5 synthetic family only",
+   "text_anchor": "claim:C-SYNTH-WITNESS-001"
+  }
+ ],
+ "schema": "jed-working-note-v5-claim-ledger-v2",
+ "status": "integration_draft"
+}

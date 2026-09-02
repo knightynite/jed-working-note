@@ -1,0 +1,81 @@
+{
+ "campaign_totals": {
+  "note": "post-close count of this team's submissions, read from the authenticated endpoint",
+  "page_sizes": [
+   100,
+   100,
+   51
+  ],
+  "status_counts": {
+   "COMPLETE": 89,
+   "ERROR": 162
+  },
+  "submissions_total": 251
+ },
+ "capture": {
+  "authority": "AUTHENTICATED_READS_ONLY_NO_REMOTE_MUTATION",
+  "end_utc": "2026-09-02T02:46:52.375816Z",
+  "endpoints_allowed": [
+   "/v1/competitions.CompetitionApiService/GetCompetition",
+   "/v1/competitions.CompetitionApiService/GetLeaderboard",
+   "/v1/competitions.CompetitionApiService/GetSubmissionLimits",
+   "/v1/competitions.CompetitionApiService/ListCompetitionPages",
+   "/v1/competitions.CompetitionApiService/ListSubmissions"
+  ],
+  "formal_close_utc": "2026-09-01T23:59:00Z",
+  "minimum_interval_seconds": 30,
+  "remote_mutations": 0,
+  "snapshot_count": 2,
+  "stable_fields_identical": true,
+  "start_utc": "2026-09-02T02:46:18.939435Z",
+  "started_after_close": true
+ },
+ "derived": {
+  "A_change_percent": "-99.71",
+  "A_retained_fraction_percent": "0.2884",
+  "B_change_percent": "+0.058",
+  "ordering_inverted": true,
+  "private_ratio_B_over_A": "86.05",
+  "public_ratio_A_over_B": "4.0324"
+ },
+ "identifier_redaction": "submission identifiers and script version ids are omitted; the release boundary excludes them and the observation does not depend on them",
+ "nonclaims": [
+  "These are the author's own submission outcomes; no competitor outcome is included.",
+  "This records what the two guardrails scored, not why; no predicate attribution is made.",
+  "Two artifacts selected pre-close by one team are an existence observation, not a sample.",
+  "The private guardrail is not identified, approximated, or reconstructed.",
+  "A third party cannot independently re-read the collapsed artifact's private score, because the platform publishes only a team's best selected submission."
+ ],
+ "observations": [
+  {
+   "label": "Selection B - mail-shaped",
+   "private_score": "25.815",
+   "public_score": "25.800",
+   "snapshot": "first",
+   "status": "COMPLETE"
+  },
+  {
+   "label": "Selection A - exfiltration-shaped",
+   "private_score": "0.300",
+   "public_score": "104.035",
+   "snapshot": "first",
+   "status": "COMPLETE"
+  },
+  {
+   "label": "Selection B - mail-shaped",
+   "private_score": "25.815",
+   "public_score": "25.800",
+   "snapshot": "second",
+   "status": "COMPLETE"
+  },
+  {
+   "label": "Selection A - exfiltration-shaped",
+   "private_score": "0.300",
+   "public_score": "104.035",
+   "snapshot": "second",
+   "status": "COMPLETE"
+  }
+ ],
+ "schema": "jed-working-note-guardrail-divergence-evidence-v1",
+ "status": "OBSERVED_POSTCLOSE_READ_ONLY"
+}

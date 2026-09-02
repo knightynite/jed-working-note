@@ -1,0 +1,28 @@
+{
+  "schema": "jed-working-note-v5-public-repeat-family-v1",
+  "scope": "one participant-owned byte-identical public-score family; identifiers and attack content excluded",
+  "prior_scores": [
+    "120.815",
+    "121.915",
+    "118.865",
+    "118.540",
+    "120.815",
+    "118.865",
+    "116.455",
+    "119.840",
+    "120.815",
+    "117.930",
+    "120.815"
+  ],
+  "fresh_author_designated_batch": [
+    "114.450",
+    "113.055",
+    "118.215",
+    "111.905"
+  ],
+  "nonclaims": [
+    "The values are public participant-owned outcomes, not private rows.",
+    "The batch does not identify an evaluator, parser, model, runtime, or policy change.",
+    "The exchangeability calculation is a descriptive calibration under its stated null, not a causal test."
+  ]
+}

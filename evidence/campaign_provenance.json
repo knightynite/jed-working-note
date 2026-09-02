@@ -1,0 +1,28 @@
+{
+  "schema": "jed-working-note-v5-campaign-provenance-v1",
+  "status": "author_declared_source_hash_record_pending_owner_attestation",
+  "record_created_utc": "2026-09-01T10:00:21Z",
+  "scope": "deidentified public repeat-family correction only",
+  "baseline_score_bank": {
+    "bytes": 98070,
+    "sha256": "ec42a33fa86e906390ea2893f2bc43f643dfb3aba93f31042131dbe46b96d827",
+    "body_in_release": false
+  },
+  "fresh_batch_preregistration": {
+    "bytes": 6288,
+    "sha256": "02d256037d7463ad4de01485c95a77688a2f93364ec2cc30d7da7487ad645508",
+    "body_in_release": false
+  },
+  "released_values_fixture": {
+    "path": "data/campaign_public_scores.json",
+    "bytes": 761,
+    "sha256": "eb5545879206d1c6462239845d2292bebfb1d54d2aa057e507926edf69ee6748"
+  },
+  "selection_rule": "The author reports that the byte-identical family and its fresh group of four exact-repeat draws were designated together before the four public scores were read; the prior group is the eleven earlier public draws of that family. The released rank is a within-family calibration, not a multiplicity-adjusted campaign-wide p-value.",
+  "assertion_basis": "participant-authored source identities and campaign record; final owner attestation pending",
+  "nonclaims": [
+    "This record is author-declared provenance, not independent proof of source creation time.",
+    "The author-held source bodies are excluded because they contain operational identifiers outside the Working Note scope.",
+    "The released values identify no private row, evaluator change, parser, model, runtime, or private policy."
+  ]
+}

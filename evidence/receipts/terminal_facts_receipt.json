@@ -1,0 +1,20 @@
+{
+ "campaign_expected_summary_sha256": "2c3cf56791dc4fad07e7c3838ddd63e4a42950d4031b437b68cbf9c283649f97",
+ "campaign_family_post_close_rechecked": true,
+ "campaign_family_recheck_summary": "Re-read the authenticated submissions endpoint after close and regrouped all 251 rows by script version id. Exactly one family has fifteen members, script version 345457384. Its draws are all COMPLETE, strictly increasing in date from 2026-08-28T00:18:48Z to 2026-09-01T01:45:36Z, and the public-score sequence is 120.815, 121.915, 118.865, 118.540, 120.815, 118.865, 116.455, 119.840, 120.815, 117.930, 120.815, 114.450, 113.055, 118.215, 111.905, matching the released fixture exactly. No later draw from the same family exists, so the released sequence omits none.",
+ "campaign_provenance_sha256": "6330bf80a1e948ded892dd2afc88af4daebad794b0a6e1fafbf46a0fa9be1d60",
+ "campaign_public_scores_sha256": "eb5545879206d1c6462239845d2292bebfb1d54d2aa057e507926edf69ee6748",
+ "captured_at_utc": "2026-09-02T02:46:52Z",
+ "capturer_public_name": "AL Najafi",
+ "competition_closed": true,
+ "final_submission_deadline_utc": "2026-09-01T23:59:00Z",
+ "live_capture_bytes": 12181,
+ "live_capture_sha256": "fc16606c08b865f10cc984cc3aa79c29ead617bdb090b86472b851eb337b50e1",
+ "live_url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview/timeline",
+ "official_source_id": "Official-Timeline",
+ "same_family_released_sequence_complete": true,
+ "schema": "jed-working-note-v5-terminal-facts-receipt-v1",
+ "status": "PASS",
+ "terminal_fact_summary": "Terminal competition facts read after the 2026-09-01T23:59:00Z close: 251 submissions from this team, both final selections COMPLETE, and the two guardrail scores that section 5 reports. The scheduled post-close capture controller failed all four attempts on a submission-limits predicate that required a numToday field Kaggle stops returning once a competition closes; no evidence drift was involved. These facts were therefore captured by a purpose-built read-only tool whose identity is bound above, and the repeat-family recheck was performed separately against the same endpoint.",
+ "terminal_facts_verified": true
+}

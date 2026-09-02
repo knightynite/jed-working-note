@@ -1,0 +1,17 @@
+trial_id,arm,completed,score
+C1,control,1,4
+C2,control,1,4
+C3,control,1,4
+C4,control,1,4
+C5,control,1,4
+C6,control,1,4
+C7,control,1,4
+C8,control,1,4
+T1,treatment,1,8
+T2,treatment,1,8
+T3,treatment,1,8
+T4,treatment,1,8
+T5,treatment,0,0
+T6,treatment,0,0
+T7,treatment,0,0
+T8,treatment,0,0
