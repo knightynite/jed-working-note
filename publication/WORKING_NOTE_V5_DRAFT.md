@@ -2,10 +2,10 @@
 
 ## What it costs to make a benchmark score mean something
 
-**Status:** release candidate; competition closed 2026-09-01T23:59:00Z  
+**Status:** integration candidate; competition closed 2026-09-01T23:59:00Z  
 **Scope:** competition methodology, synthetic demonstrations, and benchmark-design lessons  
 **Author/team attribution:** AL Najafi (solo)  
-**License:** MIT (see `LICENSE.txt`)  
+**License:** MIT (`LICENSE.txt` in the repository linked in §9)  
 
 ## Abstract
 
@@ -18,17 +18,19 @@ same replay harness, same scoring predicates. What differed is the guardrail dec
 which tool calls succeed. **The public ranking of the two inverted under the private
 one.** A participant ranking these candidates on public feedback would have ranked
 them backwards against the instrument that decided the competition. We make no claim
-about why. §5 weighs four candidate mechanisms, rules out only one, and leaves three
-it cannot separate, of which one would change the lesson.
+about why. §5 weighs four candidate mechanisms and separates none of them. One is unlikely at
+this magnitude, on a single artifact. Of the three that remain, one would change the
+lesson.
 
 A synthetic workbench sharpens the measurement failure into something a builder can
 act on. Across a declared eight-policy family, all 28 pairs separate on the full
 recorded case signature. Delete the recorded decision label and 2 of those 28
 collapse. In both of those pairs the proposed actions, executed-action records,
 immediate effects, and stable cells are identical on every released case. Those
-policies do differ behaviorally, on a re-proposal after confirmation the corpus never
-exercises. So a suite must **either exercise the deferral branch or record the
-decision label**, or a refusal and a deferral become the same row.
+policies do differ behaviorally, on a re-proposal after confirmation that the corpus
+never exercises. So a suite must **either exercise the deferral branch or record the
+decision label**. A suite that does neither turns a refusal and a deferral into the
+same row.
 
 From these we draw what a benchmark can expose without revealing its hidden defense:
 content-addressed artifact identities, counts by phase instead of one scored
@@ -36,7 +38,7 @@ denominator, a declared reducer over repeated evaluations, a correction ledger, 
 the decision label itself. Each is cheap, and each removes a class of unfalsifiable
 claim from the discourse around the benchmark.
 
-All of it came out of a protocol that turned on us first. It made us retire our own
+Most of it came out of a protocol that turned on us first. It made us retire our own
 evaluator-change story, preserve every observation, and decline to name a cause,
 because the evidence supported a smaller claim than the one we wanted.
 
@@ -71,12 +73,14 @@ stationarity.
 
 One item of provenance is checkable and the rest is not. The released record declares
 a score bank of `98070` bytes with SHA-256 `ec42a33f…`. An author-held file with
-exactly those bytes and that digest was written `2026-08-31T13:49Z`, **18 hours 39
-minutes before the last fresh score became visible**. That fixes the prior-eleven
-group before the fresh scores existed, by digest and not on trust. A second artifact,
-an allocation controller written 18 hours 50 minutes earlier, hard-codes the
-one-plus-four split in source. But its transaction stopped after one send, and a file
-timestamp is author-controllable, so treat it as weak corroboration of intent. The
+exactly those bytes and that digest is dated `2026-08-31T13:49Z` in the author's
+filesystem, **18 hours 39 minutes before the last fresh score became visible**. The
+digest fixes the contents of the prior-eleven group. The date does not: a filesystem
+timestamp is author-controllable, so it corroborates intent rather than proving order.
+A second artifact, an allocation controller dated 18 hours 50 minutes before that same
+score, hard-codes the one-plus-four split in source, and its transaction stopped after
+one send. Both artifacts carry the same evidentiary weight, and it is weaker than a
+digest. The
 record's other declared digest, a `6288`-byte preregistration, **no longer resolves**.
 That file has since been appended to and now differs in size and hash. A record that
 invites verification has to survive being verified, and this half did not. None of it
@@ -85,9 +89,9 @@ designation is author-reported, and is the premise the ledger's own falsifier ta
 
 One disclosure bears on how the title reads. This competition did announce an
 evaluator update publicly on 2026-06-23, stating that existing submissions would not
-be rescored. It predates every draw discussed here by more than two months, so it is
-not a candidate explanation for this shift, but a reader who remembers that post
-deserves to have it named. The story we retired was our own inference about a
+be rescored [Official-Evaluator-FAQ], the same host post §5 relies on. It predates every draw discussed here by more than two months, so it does
+not explain this shift. A reader who remembers that post still deserves to have it
+named. The story we retired was our own inference about a
 *further*, unannounced change, and we found no evidence for one.
 
 The protocol produced an asymmetric outcome. Retire the stationary forecast, preserve
@@ -113,8 +117,8 @@ evidence for a mechanism.
 A hidden-defense benchmark invites one seductive mistake, which is to treat every
 score as a measurement of the hidden defense. Scores also reflect artifact drift,
 completion filtering, serialization, stochastic variation, or an aggregate that erases
-the policy behavior of interest. The protocol is an ordered promotion gate, not a
-search strategy. Candidate generation (prompt search, fuzzing, throughput engineering)
+the policy behavior of interest. The protocol is an ordered promotion gate. It says nothing about how to
+search. Candidate generation (prompt search, fuzzing, throughput engineering)
 proposes. This order decides what an observation is allowed to establish.
 
 1. **Bind identity.** Which exact bytes ran? A favorable number computed on a
@@ -128,10 +132,13 @@ proposes. This order decides what an observation is allowed to establish.
 5. **Interpret last**, and only within the scope the first four gates permit.
 
 Each promoted claim carries an evidence class, a scope, a falsifier, and artifact
-anchors resolved against a hash-bound manifest. A released verifier checks those
-bindings mechanically, so a claim cannot quietly outgrow its evidence between drafts.
-The order is an author protocol and not an empirical law. We offer it because it
-produced a correction we would otherwise have missed, and it is falsified by any
+anchors resolved against a hash-bound manifest. A released verifier checks
+mechanically that every claim resolves to a declared anchor and that the anchor is
+present, so an anchor cannot silently disappear between drafts. It does not check that
+the anchor supports the claim. §9 reports what a passing run does and does not
+establish, because we attacked it and the answer is narrower than a green result looks.
+The order is an author protocol. We offer it because it
+forced the correction in §1 against our preference, and it is falsified by any
 documented benchmark context in which applying these gates in this order is
 counterproductive.
 
@@ -150,14 +157,14 @@ counterproductive.
 
 The workbench is standard-library-only, hash-pinned, deliberately small, and not a
 sample of real defenses. It exists so that each failure mode can be reproduced and
-mutation-tested, not asserted.
+mutation-tested.
 
 **Identity.** A favorable metric computed after the executed artifact's bytes
 changed is rejected before it is compared. Version history is useful context, but it
 is not artifact identity.
 
 **Assignment.** Sixteen trials, eight per arm. Among completers the treatment arm
-leads by exactly `4`. Restoring the four assigned non-completers, the declared
+leads by exactly `4` points of the toy aggregate. Restoring the four assigned non-completers, the declared
 intention-to-treat difference is exactly `0`. The gain was attrition.
 
 **Aggregation.** Eight toy policies over seven cases produce two aggregate ties. For
@@ -165,8 +172,10 @@ those two tied pairs the recorded behavior is identical on every released case, 
 only the decision label separates them. §4 makes that precise and draws the
 coverage lesson from it.
 
-Each failure mode is mapped to the receipt that isolates it, so a reader can see
-which instrument answers which confound without taking the protocol on trust:
+The three above sit inside a wider map of five tool-agent layers. Each layer is mapped
+to the receipt that isolates it, so a reader can see which instrument answers which
+confound without taking the protocol on trust. The remaining two layers are covered by
+declared semantics rather than a worked example:
 
 | Tool-agent layer | Confound it introduces | Receipt or control that isolates it |
 |---|---|---|
@@ -192,12 +201,13 @@ signature as the full recorded result: the case identifier, the points, the cell
 and the complete trace of proposed action, executed action, immediate effect, stable
 cell, and recorded decision. All `C(8,2) = 28` pairs differ on at least one case
 signature, and exhaustive search over all 35 three-case subsets finds exactly one
-suite that separates all eight policies. No one- or two-case suite does. The minimum
-suite is unique, not merely minimal.
+suite that separates all eight policies. No one- or two-case suite does. Exactly one three-case suite does it, so the minimum
+suite is unique.
 
 Now delete the decision label from the signature and repeat the search. This is what
 an observer sees who can watch what an agent proposed, what it executed, what
-changed, and where, but cannot see what the guardrail called it.
+changed, and where, but cannot see what the guardrail called it. The block below is
+derived by hand from the released fixtures; `reproduce.py` does not emit it (§9).
 
 ```
 label-free equivalence classes over the full 7-case corpus:
@@ -239,8 +249,8 @@ check it in about fifteen lines. Its guardrail returns one of four decisions
 (`ALLOW`, `DENY`, `CONFIRM`, `SANITIZE` in `aicomp_sdk/guardrails/base.py`), but the
 scored tool record carries no decision field, only a success boolean and a free-text
 `error` string in `aicomp_sdk/core/trace.py`, into which a block is written as the
-prefix `denied:` or `confirm_required:`. Every attack predicate gates on that boolean
-and never reads the string; the grading gateway discards any candidate that produced
+prefix `denied:` or `confirm_required:`. In the version we read, `aicomp-sdk` 1.4.2 from PyPI, the attack predicates gate on
+that boolean and none of them reads the string; the grading gateway discards any candidate that produced
 no predicate before a cell signature is formed. So a candidate whose only guardrail
 interaction is a block scores identically whether it was denied or merely deferred.
 On the defense track the collapse is unconditional. Both prefixes fold into one
@@ -252,11 +262,12 @@ signature's `guardrail_blocks` field, folded into the novelty hash. But it survi
 only for candidates that independently cleared the predicate gate, and only while the
 block stays inside that signature's three-event window. `SANITIZE` is not a
 non-execution at all, because it rewrites the arguments and proceeds, and so it
-scores like `ALLOW`. This is a derivation a reader can run against the published SDK,
-not a receipt we hold.
+scores like `ALLOW`. This is a derivation a reader can run against the published SDK
+(`pip install aicomp-sdk==1.4.2`), not a receipt we hold. It is a reading of one
+version, not a proof about every predicate the package may ever contain.
 
-This is a statement about test-suite design, not a discovery about any hidden
-policy. It is cheap to act on and easy to check, which is most of its value.
+This is a statement about test-suite design. It discovers nothing about any hidden
+policy, and it is cheap to act on and easy to check.
 
 ![Equal aggregates, different recorded decisions](../figures/equal_score_different_decision.svg)
 
@@ -272,12 +283,11 @@ claim using the real system, because the competition ran the experiment for us.
 
 The captured Evaluation page describes a private guardrail "not accessible to
 competitors" [Official-Evaluation]. The premise §5 needs is stronger than that page
-states, so we cite its actual warrant, the organisers' evaluator FAQ. It says the
+states, so we cite its actual warrant, the organizers' evaluator FAQ. It says the
 attack algorithm "is executed exactly once per model during live exploration… It is
 not run a second time for Private Leaderboard scoring", and that the candidate
 sequences "are replayed in fresh environments against both the Public Guardrail and
-the Private Guardrail" (organisers' evaluator FAQ, competition discussion topic 712642,
-2026-06-23). That establishes one generation phase and two guardrail replays of the
+the Private Guardrail" [Official-Evaluator-FAQ]. That establishes one generation phase and two guardrail replays of the
 same candidates, scored twice.
 
 Two limits bear on that premise. The first is that the replays are separate
@@ -292,7 +302,7 @@ selections:
 
 | Selected artifact | Public guardrail | Private guardrail | Change |
 |---|---:|---:|---:|
-| Selection A (exfiltration-shaped) | `104.035` | `0.300` | **−99.7%** |
+| Selection A (exfiltration-shaped) | `104.035` | `0.300` | **-99.7%** |
 | Selection B (mail-shaped) | `25.800` | `25.815` | +0.06% |
 
 (Submission identifiers are deliberately omitted; the release boundary excludes them
@@ -319,10 +329,10 @@ and one of them would change the lesson:
 | The private guardrail responds differently to different artifacts | yes | artifacts spanning several predicate mixes, not two |
 | **A single predicate is blocked outright**, artifact-independently. Our stronger artifact scored almost entirely through one route, so closing that route zeroes it and leaves the other untouched | **yes, equally well** | a third artifact whose public score comes from a *different* predicate mix |
 | The residue is a floor, not a graded response, so the collapse carries roughly one bit (route blocked / not blocked) rather than a magnitude | yes | replicates spanning intermediate predicate mixes |
-| Replay variation, since the two boards are separate executions in fresh environments | not on this magnitude | byte-identical replicates scored under both guardrails |
+| Replay variation, since the two boards are separate executions in fresh environments | unlikely at this magnitude, but observed on one artifact only | byte-identical replicates scored under both guardrails, which we do not have |
 
-We cannot separate these. In particular the second row is not a smaller version of
-the first. If one route is simply closed, the public-to-private map is **structured
+We cannot separate these. In particular the second row is a different claim from
+the first, with a different consequence for a builder. If one route is simply closed, the public-to-private map is **structured
 and learnable** and not capricious, and a benchmark builder should draw a different
 conclusion than if the instrument were artifact-sensitive. We have no control arm
 that distinguishes them, which by our own gate 3 means the mechanism stays unnamed.
@@ -331,24 +341,24 @@ What survives all four rows is the narrow claim, and it is the one we make. A pu
 leaderboard scored against a permissive guardrail **can** invert the ordering the
 hidden one produces, and here it did, by a margin no participant could have read off
 public feedback. That is an existence result from two artifacts chosen by one team.
-It is not a distribution, not a typical magnitude, and not an identification of the
+It does not establish a distribution, a typical magnitude, or the identity of the
 private guardrail.
 
 A reader who compares this section against §1 will find an apparent contradiction,
 and it is worth resolving because it corroborates the premise. §1's family has a
 sample standard deviation of `1.618804` on a mean of `119.606364`, a coefficient of
 variation near 1.35%, which applied to row B's `25.800` would predict roughly `0.35`
-points of spread. The observed public-to-private difference on row B is `0.015`,
-more than twenty times tighter. The two are not in conflict. §1's dispersion is
+points of spread. Row B's two scores differ by `0.015`, well inside that predicted spread. One pair is
+weak evidence, but it points the right way. The two sections are not in conflict. §1's dispersion is
 measured *across fifteen separate submissions*, each with its own generation phase,
 whereas the two scores in row B come from **one** generation phase replayed twice.
 The variance that dominates §1 is generation variance, and §5's pair does not
-contain any of it. That is what the organisers' FAQ describes, so the arithmetic here
-is a check on the premise and not a strain against it. It is also why the collapse in
-row A cannot be dismissed as a noisy draw. There is no second generation for it to be
-noisy across.
+contain any of it. That is what the organizers' FAQ describes, so the arithmetic is
+consistent with the premise rather than a strain against it. Row A's collapse is also
+far larger than any replay difference we observed, though we observed replay stability
+on one artifact only, so this weighs against a noisy draw without ruling one out.
 
-One disclosure strengthens the result instead of weakening it. These two artifacts
+One disclosure cuts both ways. These two artifacts
 were not a random pair. They were selected before the close as a deliberate straddle,
 because we had assigned meaningful probability to the branch in which the
 exfiltration-shaped artifact fails privately. That selection was **locked before the
@@ -356,28 +366,25 @@ private values could exist**, so the comparison could not have been chosen after
 seeing its outcome. But it also means the pair was picked to span this contrast, so
 the *frequency* of such inversions in the wider field is not something these two
 points can speak to. It also undercuts one thing we might otherwise have said. We
-were not, in fact, optimising blindly against the permissive guardrail. We read the
-published guardrail source and hedged, and other public notes from this competition
-show their authors reasoning the same way.
+were not, in fact, optimizing blindly against the permissive guardrail. We read the
+published guardrail source and hedged.
 
 For benchmark designers the implication is concrete and uncomfortable. The only
 per-submission gradient is a permissive-guardrail score, and that is the gradient
 search will follow. A careful participant can partly escape it, because the public
-guardrail's source is published, so its behaviour can be read rather than inferred,
-and we and several other public notes did so. But reading source is not feedback, and
+guardrail's source is published, so its behavior can be read rather than inferred,
+and we did so. But reading source is not feedback, and
 it cannot price the hidden guardrail. A benchmark that wants search directed at the
 hidden objective has to leak something about it: a coarse private signal, a
 validation split, a rejection reason, or selective release of the kind The Ladder
-formalises [Ladder]. The alternative is to accept that its public ranking may order
+formalizes [Ladder]. The alternative is to accept that its public ranking may order
 artifacts differently from the instrument that decides it. Our own campaign is a
-worked example of the cost. That campaign finished 52nd of 4,251 on the private
-board, a standing produced entirely by the artifact that did not collapse. The
-post-close record shows 251 submissions from this team, spent climbing a board that,
+worked example of the cost. That campaign finished 52nd of 4,186 teams on the
+private board, a standing produced entirely by the artifact that did not collapse. The
+post-close record shows 251 submission attempts from this team, of which 89 completed,
+spent climbing a board that,
 for our stronger artifact, ranked it above one the private guardrail ranked far
 below.
-
-This is the sharpest evidence in the note that the protocol in §2 is worth its cost,
-and it arrived by losing.
 
 <!-- claim:C-GUARDRAIL-DIVERGENCE-001 -->
 
@@ -411,10 +418,11 @@ unfalsifiable claim from the discourse around the benchmark:
   carried into every scored channel**. §4 shows a suite doing neither cannot
   separate a refusal from a deferral, and the label is much the cheaper of the two.
   Recording it once is not sufficient. In this benchmark the label reaches the
-  novelty hash but not the predicate gate or the defense score, and a label that only
-  some scored channels can see leaves the others unable to tell the two apart
+  novelty hash, but the `DENY`/`CONFIRM` distinction survives into neither the
+  predicate gate nor the defense score, where both prefixes merge into one counter. A
+  label only some scored channels can see leaves the others unable to tell the two apart
 - a **correction ledger** naming which claims were retired, when, and on what
-  evidence, so that a reversal is a first-class artifact and not a silent edit
+  evidence, so that a reversal leaves a record of its own
 - a declared reducer over repeated evaluations, so a maximum is not mistaken for an
   expectation
 - **a documented rule for combining multiple final selections.** No authenticated
@@ -434,8 +442,9 @@ unfalsifiable claim from the discourse around the benchmark:
 ## 8. Relation to prior work
 
 Five contemporaneous competition notes map the observable attack surface:
-source-level predicate reachability [JED-Xander]; payload and reasoning-channel
-weaknesses [JED-Radiant]; a budget-aware validation-fill attack loop with an explicit
+source-level predicate reachability [JED-Xander]; a source-grounded public ablation
+study that also reports two deliberately mechanism-diverse final selections and
+argues for mechanism-diverse portfolios [JED-Radiant]; a budget-aware validation-fill attack loop with an explicit
 replay-time deadline [JED-Pilkwang]; throughput, repeated-evaluation noise, and
 controlled negative results [JED-Cleanor]; and bounded search under coarse feedback
 with explicit evidence classes and claim limits [JED-oNanachii].
@@ -444,18 +453,28 @@ We claim no priority for publishing a retraction, and it is worth saying why,
 because we drafted such a claim and then found it false. Several notes in this
 competition carry dated public self-corrections. [JED-Xander] records revising two
 of its own sections after its own results contradicted an absolute claim it had
-made. Retraction is not our differentiator, but is, encouragingly, something this
-field already does.
+made. Retraction is something this field already does, so we claim no
+credit for it.
 
 Our §5 needs the same honesty. [JED-Xander] reports the public-versus-private
-divergence at **field scale**, across the whole leaderboard, and predicted it in
-advance from source. That is the stronger form of the observation, and it came
-first. What our §5 adds is narrower and complementary, a **within-team paired**
+divergence at **field scale**, across the whole leaderboard, from a source-level
+analysis published before the close. That is the stronger form of the observation.
+What our §5 adds is narrower and complementary, a **within-team paired**
 measurement in which both artifacts come from one generation phase, so the comparison
 isolates the guardrail from the generation variance that dominates a cross-team
 board. The §1 dispersion figures are what let us say that. They are the reason row
 B's tightness is informative and not lucky. A field-scale result establishes that the
 divergence is common. A paired one constrains what it can be attributed to.
+
+[JED-Radiant] is nearer still, and the difference is worth stating precisely.
+That note also selected two finals that deliberately differed in mechanism, and
+read both boards after the close. Both of its selections scored zero privately, so
+it reports a **collapse** of both routes. Ours reports an **inversion**: one
+selection held at `25.815` while the other fell to `0.300`, so the public ordering
+of the pair reversed. Collapse and inversion carry different lessons for a
+benchmark designer. A collapse says the disclosed route does not transfer. An
+inversion says the public gradient can actively mislead a participant about which
+of two artifacts is better.
 
 Prior work supplies the ingredients. AgentDojo builds prompt-injection evaluation as
 an extensible environment, not a static list [AgentDojo]. InjecAgent reports
@@ -470,15 +489,16 @@ inheriting its theorems. CONSORT 2025 supplies the reporting discipline for the
 assignment gate [CONSORT-2025]. Active automata learning supplies the habit of
 binding distinguishability to explicit witness cases [Small-Test-Suites].
 
-What is new is not an ingredient but a promotion order that is executable and
-checked, applied to a live hidden-defense benchmark, together with a
-non-identification result that tells builders exactly which field to record.
+We do not claim novelty for any ingredient. What we have not seen combined elsewhere
+is a promotion order that is executable and checked, applied to a live hidden-defense
+benchmark, together with a corpus-scoped non-identification result that names a
+concrete field a builder can record.
 
 ## 9. Reproduction
 
 The complete payload is public, under MIT:
 
-**`https://github.com/knightynite/jed-working-note`**, published by the author
+**[github.com/knightynite/jed-working-note](https://github.com/knightynite/jed-working-note)**, published by the author
 (GitHub `knightynite`, AL Najafi).
 
 Verify the release archive, not a clone. The verifier is a whole-tree scan. It
@@ -489,7 +509,8 @@ can be browsed and diffed. The archive is the artifact the receipt describes.
 
 From the release root, one standard-library command checks the manifest and
 evidence, reproduces both result sets, runs the synthetic and release-contract
-tests, validates figures and claim/citation bijections, and emits one receipt:
+tests, validates figures and claim/citation bijections, and emits one receipt. It
+requires **CPython 3.12 exactly**, and refuses to run on any other minor version:
 
 ```text
 python -I -B scripts/verify_release_v5.py
@@ -521,14 +542,42 @@ of the three-case suite, are not computed by `reproduce.py`, which reports a min
 suite without proving it the only one. Both follow from the released fixtures in
 roughly fifteen lines. Rebuild each case signature with the `decision` key removed,
 then re-run the same pairwise and subset searches. We state them as derivations a
-reader can check, not as receipts we already hold.
+reader can check. We hold no receipt for either. §1's contiguous-window fraction
+(`1/12`) and §5's coefficient-of-variation arithmetic are likewise computed from the
+released values rather than emitted by the checkers.
+
+### What a passing run does not establish
+
+We attacked our own verifier before publishing it, because a note arguing that a
+scalar can hide a decision should not ship a green check that hides the same way.
+A passing run establishes payload integrity: that every file is the file the manifest
+names, that both reproducers regenerate their expected outputs byte for byte under
+`-O` and normally, that the figures carry no active content, and that every claim
+resolves to a declared anchor.
+
+It establishes nothing about whether the content is true. The manifest generator is a
+pure function of the tree, and verification recomputes it, so an author who edits a
+value and regenerates the manifest passes. Under adversarial test we inverted this
+note's headline private score while leaving the derived percentages and the prose
+contradicting it, redrew a figure's data series so the chart contradicted its own
+caption, and repointed a reference to an unrelated paper. Each change passed. The
+anchor check resolves a JSON path or a whitespace-normalized substring, so it confirms
+that an anchor is present, not that the anchor supports the claim. The declared
+non-claims in §10 are author commitments a reader must check against the text; the
+verifier does not test them, and their ledger entries now say so.
+
+The three bindings that did resist attack are the synthetic workbench, the campaign
+fixture, and the pinned campaign statistics, each of which is re-derived byte for
+byte from its inputs rather than compared against a stored digest. That is the
+difference between a hash and a computation, and it is the same lesson as §4: a
+recorded value that nothing re-derives is a value nothing checks.
 
 Artifact identities live in the payload manifest, not inline here, so this paragraph
 never has to be kept in sync with the files it describes. The published archive is an
 integration candidate. It carries the manifest, the evidence records, and the
 verifier, and the receipt that command prints is what certifies it. The attestation
 and approval records that a final release binds are not part of this archive, and the
-manifest says so in its own status field, so no reader has to infer it.
+manifest's status field records the archive's integration-candidate status.
 
 ## 10. Responsible disclosure boundary
 
@@ -583,15 +632,16 @@ a reader reject.
 artifacts from one team, deliberately selected before the close to straddle the one it
 reports, so it establishes existence and says nothing about frequency or typical
 magnitude. It has no control arm separating the guardrail difference from the
-separate replay execution. Of the four candidate mechanisms §5 weighs, only replay
-variation is ruled out. Three remain unseparated, and one of them, a single blocked
-route, would make the public-to-private map learnable and not capricious. Its two
+separate replay execution. Of the four candidate mechanisms §5 weighs, none is
+separated. Replay variation is unlikely at this magnitude but rests on one artifact.
+One of the others, a single blocked route, would make the public-to-private map
+learnable rather than capricious. Its two
 private values are also readable only from the author's own authenticated account. A
 third party can verify the shipped receipt's internal consistency and the better of
 the two scores from the public final standing, but cannot independently re-read the
 collapsed artifact's private score, because the platform publishes only a team's best
 selected submission. That is a real verifiability gap in the note's most striking
-result, and we would rather name it than let a reader discover it.
+result.
 
 Most importantly, nothing here identifies the inaccessible private guardrail. The
 method is built to stay useful when that answer never arrives.
@@ -607,16 +657,14 @@ control. Record the decision, not just the action. When the evidence shrinks, le
 claim shrink with it, including when the claim you have to give up is the interesting
 one.
 
-That is not a retreat from optimization. It is how optimization becomes a result
-someone else can trust.
+Optimization survives all of this. It becomes a result someone else can trust.
 
 ## Contributions
 
-AL Najafi conceived and directed this work. He designed and ran the submission
-campaign these results come from, set the evidence standards the note applies, made
-every submission and final-selection decision (including the two-artifact straddle
-§5 reports), determined which findings were promotable and which were retired,
-reviewed every claim released here, and is responsible for them.
+I am the sole author. I ran the submission campaign these results come from, made
+every submission and final-selection decision including the two-artifact straddle
+§5 reports, set the evidence standards the note applies, decided which findings were
+promotable and which were retired, wrote this note, and am responsible for it.
 
 ## References
 
@@ -643,8 +691,9 @@ reviewed every claim released here, and is responsible for them.
 - [JED-Xander] Xander (`canqiang`), "The Scored Attack Surface Collapses to a Single
   Predicate," 2026,
   https://www.kaggle.com/writeups/canqiang/the-scored-attack-surface-collapses-to-a-single-pr.
-- [JED-Radiant] `radiant-allomancer`, "Reading the Objective from Source: A
-  Throughput-Bound Exfiltration Study," 2026,
+- [JED-Radiant] `radiant-allomancer`, "Public Throughput, Private Zero: What a
+  Source-Level Guardrail Audit Taught Us," 2026, revision of 2026-09-02 read on
+  2026-09-03,
   https://www.kaggle.com/writeups/radiantallomancer/reading-the-objective-from-source-a-throughput-bo.
 - [JED-Pilkwang] Pilkwang Kim, "AI Agent - Working Note," 2026,
   https://www.kaggle.com/code/pilkwang/ai-agent-working-note.
@@ -655,6 +704,9 @@ reviewed every claim released here, and is responsible for them.
   Feedback: Shrinking the Attack-Design Space with Controlled Negative Results,"
   2026,
   https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/737600.
+- [Official-Evaluator-FAQ] `owenvallis` (competition host), "Evaluator update and
+  FAQ," competition discussion topic 712642, 2026-06-23, read 2026-09-03,
+  https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/712642.
 - [Official-Evaluation] Kaggle, "AI Agent Security: Multi-Step Tool Attacks -
   Evaluation," dated local capture 2026-08-25,
   https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/overview/evaluation.

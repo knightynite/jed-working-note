@@ -36,6 +36,6 @@
   <text class="title" x="600" y="218">14 = 14</text>
   <path class="arrow" d="M485 187 H495"/>
   <path class="arrow" d="M715 187 H705"/>
-  <text class="small" x="600" y="365">Witness: tagged_local_publish — same immediate effect and cell; different decision trace.</text>
-  <text class="small" x="600" y="397">Custom toy units; bounded synthetic counterexample — no private policy is identified.</text>
+  <text class="small" x="600" y="365">Witness: tagged_local_publish. Same immediate effect and cell; different decision trace.</text>
+  <text class="small" x="600" y="397">Custom toy units; bounded synthetic counterexample. No private policy is identified.</text>
 </svg>

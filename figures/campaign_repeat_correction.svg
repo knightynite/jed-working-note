@@ -11,6 +11,7 @@
     .axis { stroke: #52606d; stroke-width: 3; }
     .prior { fill: #2864a8; stroke: #2864a8; stroke-width: 4; }
     .fresh { fill: #c35a16; stroke: #c35a16; stroke-width: 4; }
+    .series { fill: none; }
     .boundary { stroke: #4d565f; stroke-width: 3; }
     .panel { fill: #f7f9fc; stroke: #9aa7b3; stroke-width: 2; rx: 12; }
   </style>
@@ -27,8 +28,8 @@
   <text class="small" x="62" y="263">116</text>
   <text class="small" x="62" y="329">113</text>
   <text class="small" x="58" y="368">score</text>
-  <polyline class="prior" fill="none" points="110,150 180,126 250,194 320,201 390,150 460,194 530,247 600,173 670,150 740,215 810,150"/>
-  <polyline class="fresh" fill="none" points="880,291 950,322 1020,208 1090,347"/>
+  <polyline class="prior series" fill="none" points="110,150 180,126 250,194 320,201 390,150 460,194 530,247 600,173 670,150 740,215 810,150"/>
+  <polyline class="fresh series" fill="none" points="880,291 950,322 1020,208 1090,347"/>
   <circle class="prior" cx="110" cy="150" r="6"/>
   <circle class="prior" cx="180" cy="126" r="6"/>
   <circle class="prior" cx="250" cy="194" r="6"/>

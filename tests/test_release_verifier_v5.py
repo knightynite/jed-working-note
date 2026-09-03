@@ -361,7 +361,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                 write_json(self.module.CAMPAIGN_PROVENANCE, provenance)
 
                 note_text = self.module.NOTE.read_text(encoding="utf-8").replace(
-                    "**Status:** release candidate; competition closed 2026-09-01T23:59:00Z  ",
+                    "**Status:** integration candidate; competition closed 2026-09-01T23:59:00Z  ",
                     "**Status:** final release candidate  ",
                 ).replace(
                     "**Author/team attribution:** AL Najafi (solo)  ",
@@ -408,7 +408,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                         "ordered_publication_actions": self.module.PUBLICATION_ACTIONS,
                         "organizer_confirmed_channel": False,
                         "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
-                        "publication_channel": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                        "publication_channel": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                         "redundant_self_contained_discussion": True,
                     },
                     "signed_in_ui_observations": {
@@ -437,7 +437,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                     "ordered_publication_actions": self.module.PUBLICATION_ACTIONS,
                     "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
                     "schema": "jed-working-note-v5-official-mechanics-receipt-v3",
-                    "selected_publication_route": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                    "selected_publication_route": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                     "status": "PASS",
                     "working_note_deadline_utc": self.module.WORKING_NOTE_DEADLINE_UTC,
                 })
@@ -477,7 +477,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                     "links_reviewed": True,
                     "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
                     "previewed_publication_actions": self.module.PUBLICATION_ACTIONS,
-                    "publication_channel": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                    "publication_channel": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                     "rendered_artifact_bytes": 1,
                     "rendered_artifact_sha256": "3" * 64,
                     "rendered_format": "pdf",
@@ -518,7 +518,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                     "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
                     "public_name": "Test Author",
                     "publication_actions": self.module.PUBLICATION_ACTIONS,
-                    "publication_channel": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                    "publication_channel": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                     "schema": "jed-working-note-v5-author-attestation-v2",
                     "status": "final",
                     "team_attribution": "Test Team",
@@ -569,7 +569,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                     "license_sha256": digest(fixture / "LICENSE.txt"),
                     "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
                     "payload_manifest_sha256": manifest_digest,
-                    "publication_channel": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                    "publication_channel": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                     "schema": "jed-working-note-v5-owner-publication-approval-v2",
                     "single_use_nonce": "test_release_nonce_0001",
                     "status": "final",
@@ -587,7 +587,7 @@ class ReleaseVerifierNegativeTests(unittest.TestCase):
                     "owner_approval_sha256": digest(fixture / "OWNER_PUBLICATION_APPROVAL.json"),
                     "partial_completion_policy": self.module.PARTIAL_COMPLETION_POLICY,
                     "payload_manifest_sha256": manifest_digest,
-                    "publication_channel": "Public Kaggle Project Writeup plus self-contained JED Discussion",
+                    "publication_channel": "Public Kaggle Project Writeup, then the writeup link shared on the host award thread",
                     "schema": "jed-working-note-v5-release-envelope-v2",
                     "single_use_nonce": "test_release_nonce_0001",
                     "status": "final",

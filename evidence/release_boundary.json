@@ -30,7 +30,7 @@
   "terminal_competition_facts_captured"
  ],
  "schema": "jed-working-note-v5-release-boundary-v1",
- "status": "local_pre_close_draft_not_release_authorized",
+ "status": "local_integration_candidate_not_release_authorized",
  "synthetic_workbench": {
   "accepted_seed_manifest_bytes": 1547,
   "accepted_seed_manifest_sha256": "57971eec6c8ee639af3f32190e38c28486110b67022ddc42ce95149dbb0a4a83",

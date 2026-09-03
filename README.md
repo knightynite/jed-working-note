@@ -70,10 +70,23 @@ A mechanical pass proves internal consistency: that the files are the files the
 manifest names, that every promoted claim resolves to an anchor and a source, that
 the computations reproduce, and that the declared bindings hold.
 
-It does not prove human identity, the independence of the two review passes, or
-publication authority. Those are declarations, not machine-checked facts, and the
-verifier says so in its own receipt rather than letting a green result imply more
-than it establishes.
+It does not prove that the content is true. We attacked the verifier before
+publishing it. Because the manifest generator is a pure function of the tree and
+verification recomputes it, an author who edits a value and regenerates the manifest
+passes. Under test we inverted the note's headline score while leaving the derived
+percentages contradicting it, redrew a figure so the chart contradicted its own
+caption, and repointed a reference to an unrelated paper. Each passed. The claim
+anchor check confirms an anchor is present, not that it supports the claim, and the
+declared non-claims are author commitments no mechanical check enforces.
+
+Human identity, review independence, and publication authority are likewise
+declarations rather than machine-checked facts. The receipt says all of this in its
+own `verification_nonclaims` field rather than letting a green result imply more than
+it establishes. Section 9 of the note reports the audit in full.
+
+The three bindings that did resist attack are the synthetic workbench, the campaign
+fixture, and the pinned campaign statistics, each re-derived byte for byte from its
+inputs rather than compared against a stored digest.
 
 This archive is an **integration candidate**, and its manifest status says so. It
 carries the payload, the evidence records, and the verifier; the attestation and

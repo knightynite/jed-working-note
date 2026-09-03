@@ -98,12 +98,17 @@ MECHANICS_NONCLAIMS = [
     "Observed participant practice and visible UI controls do not constitute organizer confirmation of eligibility.",
     "This capture records visible state and selected delivery mechanics; it does not prove organizer adjudication or award eligibility.",
 ]
+# Official sources citable in the note body. Official-Evaluation is a dated local
+# capture in the source index; Official-Evaluator-FAQ is a live host post cited by
+# URL, quoted verbatim, and deliberately not presented as a local capture.
+OFFICIAL_BODY_CITATIONS = {"Official-Evaluation", "Official-Evaluator-FAQ"}
+
 PUBLICATION_ACTIONS = [
     "PUBLISH_PUBLIC_PROJECT_WRITEUP",
-    "PUBLISH_SELF_CONTAINED_JED_DISCUSSION",
+    "SHARE_WRITEUP_LINK_ON_HOST_AWARD_THREAD",
 ]
 PUBLICATION_CHANNEL = (
-    "Public Kaggle Project Writeup plus self-contained JED Discussion"
+    "Public Kaggle Project Writeup, then the writeup link shared on the host award thread"
 )
 PARTIAL_COMPLETION_POLICY = (
     "STOP_TRANSACTION_AFTER_FIRST_FAILED_OR_AMBIGUOUS_ACTION; "
@@ -520,7 +525,7 @@ def verify_workbench(release: bool) -> dict[str, Any]:
     require(boundary["schema"] == "jed-working-note-v5-release-boundary-v1",
             "release boundary schema")
     require(boundary["status"] ==
-            ("release_candidate" if release else "local_pre_close_draft_not_release_authorized"),
+            ("release_candidate" if release else "local_integration_candidate_not_release_authorized"),
             "release boundary mode")
     verify_publication_gates(boundary["publication_gate_requirements"])
     declared = boundary["synthetic_workbench"]
@@ -861,12 +866,26 @@ def verify_evidence(files: dict[str, Path], release: bool) -> None:
     require(type(related["entries"]) is list and type(related["required_topics"]) is list,
             "related-work lists")
     for row in related["entries"]:
-        exact_keys(row, {"authors", "id", "proposition_used", "review_status", "title",
-                         "url", "year"}, f"related-work row: {row.get('id')}")
+        base = {"authors", "id", "proposition_used", "review_status", "title",
+                "url", "year"}
+        # Pages that can be revised under a stable URL must pin what was read and when;
+        # versioned publications must not, being pinned already by year and identifier.
+        live_page = "//www.kaggle.com/" in row.get("url", "")
+        pin = {"observed_revision", "observed_on"}
+        expected = base | pin if live_page else base
+        exact_keys(row, expected, f"related-work row: {row.get('id')}")
         require(type(row["year"]) is int and 1900 <= row["year"] <= 2100 and
                 all(type(row[key]) is str and row[key].strip() for key in
                     ("authors", "id", "proposition_used", "review_status", "title", "url")),
                 f"related-work row values: {row.get('id')}")
+        if live_page:
+            require(all(type(row[key]) is str and row[key].strip() for key in sorted(pin)),
+                    f"related-work revision pin: {row.get('id')}")
+            require(re.fullmatch(r"\d{4}-\d{2}-\d{2}", row["observed_on"]) is not None,
+                    f"related-work observed_on format: {row.get('id')}")
+            require(re.fullmatch(r"\d{4}-\d{2}-\d{2}|none_observed", row["observed_revision"])
+                    is not None,
+                    f"related-work observed_revision format: {row.get('id')}")
     require(related["status"] == ("final_proposition_review_and_link_check_complete" if release else
                                   "initial_proposition_review_complete_final_link_check_pending"),
             "related-work status")
@@ -898,7 +917,7 @@ def verify_evidence(files: dict[str, Path], release: bool) -> None:
         require(f"[{identifier}]" in body, f"unused/missing body citation: {identifier}")
     require("[Official-Evaluation]" in body, "official Evaluation citation missing")
     body_citations = set(re.findall(r"\[([A-Za-z][A-Za-z0-9-]+)\]", body))
-    require(body_citations == set(related_ids) | {"Official-Evaluation"},
+    require(body_citations == set(related_ids) | OFFICIAL_BODY_CITATIONS,
             "note/registry citation bijection")
     for heading in ("## Abstract", "## 1. The correction",
                     "## 10. Responsible disclosure boundary", "## 11. Limitations",
@@ -1460,7 +1479,7 @@ def main() -> int:
         "publication_gate_requirements": boundary["publication_gate_requirements"],
         "release_completion_evidence": completion_evidence,
         "verification_nonclaims": [
-            "Mechanical PASS proves internal consistency only; it does not prove human identity, agent independence, signed approval, publication authority, or an out-of-band publication action.",
+            "Mechanical PASS proves payload integrity and internal consistency only. It does not prove human identity, review independence, signed approval, publication authority, or an out-of-band publication action. It also does not prove that any number in the release is true or self-consistent, that any figure depicts its data, that any citation supports the proposition attributed to it, that a claim's anchor supports the claim, or that a declared non-claim holds. The manifest is recomputed from the tree, so a PASS is evidence against unintended edits, not against an author who regenerates it.",
             "Publication authority remains an out-of-band owner decision bound by the recorded approval artifacts.",
         ],
         "release_envelope_sha256": completion_evidence.get("release_envelope_sha256"),

@@ -38,6 +38,20 @@
   "private_ratio_B_over_A": "86.05",
   "public_ratio_A_over_B": "4.0324"
  },
+ "final_standing": {
+  "board": "private",
+  "evidence_class": "recorded_observation_not_machine_checked",
+  "note": "Read from the competition leaderboard with the Private tab active while signed in as the author. Nothing in the verifier reads this record for content, so a reader should treat it as inspectable provenance rather than a checked value.",
+  "observed_on": "2026-09-03",
+  "platform_medal_string": "You won a silver medal",
+  "platform_placement_string": "Your team placed 52nd out of 4186 teams.",
+  "rank": 52,
+  "rank_5_score_crosscheck": "40.365",
+  "reported_score": "25.815",
+  "source_url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/leaderboard",
+  "team_count": 4186,
+  "team_count_caveat": "4186 is the denominator the platform itself uses in its placement statement. Entrant counts quoted elsewhere, including in other public notes, differ because they count a different population; they are not interchangeable."
+ },
  "identifier_redaction": "submission identifiers and script version ids are omitted; the release boundary excludes them and the observation does not depend on them",
  "nonclaims": [
   "These are the author's own submission outcomes; no competitor outcome is included.",

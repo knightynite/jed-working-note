@@ -66,7 +66,9 @@
   {
    "authors": "Xander (Kaggle canqiang)",
    "id": "JED-Xander",
-   "proposition_used": "source-level analysis characterizes observable predicate reachability and its benchmark-design implications",
+   "observed_on": "2026-09-03",
+   "observed_revision": "2026-09-02",
+   "proposition_used": "source-level analysis characterizes observable predicate reachability and its benchmark-design implications; the same note reports the public-versus-private divergence at field scale across the leaderboard, and records dated revisions of two of its own sections after its own results contradicted an absolute claim it had made",
    "review_status": "public_note_proposition_reviewed",
    "title": "The Scored Attack Surface Collapses to a Single Predicate",
    "url": "https://www.kaggle.com/writeups/canqiang/the-scored-attack-surface-collapses-to-a-single-pr",
@@ -75,15 +77,19 @@
   {
    "authors": "radiant-allomancer",
    "id": "JED-Radiant",
-   "proposition_used": "public-source analysis describes payload and reasoning-channel weaknesses together with throughput and defensive implications",
+   "observed_on": "2026-09-03",
+   "observed_revision": "2026-09-02",
+   "proposition_used": "a source-grounded public ablation study reports that two deliberately mechanism-diverse final selections both scored zero against the private guardrail, and argues for mechanism-diverse final portfolios",
    "review_status": "public_note_proposition_reviewed",
-   "title": "Reading the Objective from Source: A Throughput-Bound Exfiltration Study",
+   "title": "Public Throughput, Private Zero: What a Source-Level Guardrail Audit Taught Us",
    "url": "https://www.kaggle.com/writeups/radiantallomancer/reading-the-objective-from-source-a-throughput-bo",
    "year": 2026
   },
   {
    "authors": "Pilkwang Kim",
    "id": "JED-Pilkwang",
+   "observed_on": "2026-09-03",
+   "observed_revision": "none_observed",
    "proposition_used": "public measurement notebook demonstrates a budget-aware validation-fill attack loop with an explicit replay-time deadline",
    "review_status": "public_notebook_proposition_reviewed",
    "title": "AI Agent - 📘 Working Note",
@@ -93,6 +99,8 @@
   {
    "authors": "Cleanor Labs",
    "id": "JED-Cleanor",
+   "observed_on": "2026-09-03",
+   "observed_revision": "none_observed",
    "proposition_used": "controlled public negative results motivate a throughput framing and explicitly acknowledge repeated-evaluation noise",
    "review_status": "public_note_proposition_reviewed",
    "title": "Negative Results and a Throughput-Optimality Framing for the Public Attack",
@@ -102,6 +110,8 @@
   {
    "authors": "Team oNanachii",
    "id": "JED-oNanachii",
+   "observed_on": "2026-09-03",
+   "observed_revision": "none_observed",
    "proposition_used": "bounded search under coarse feedback combines controlled negative results with explicit evidence classes and claim limits",
    "review_status": "public_note_proposition_reviewed",
    "title": "[Working Note] Bounded Search Under Invisible Feedback: Shrinking the Attack-Design Space with Controlled Negative Results",

@@ -98,14 +98,14 @@
    "data_anchors": [
     "## 6. Deciding without identifying"
    ],
-   "falsifier": "additional non-neutral branches or payoffs make the two-branch reduction inadequate",
+   "falsifier": "a signal in the released record licenses an action the table denies it, or a sixth situation arises that the five rows cannot classify",
    "id": "C-METHOD-DECISION-001",
    "reproduction": [
-    "Expand expected payoffs for the two declared branches and rearrange the inequality."
+    "Read the section 6 table and check each row's licence and non-licence against the evidence class it names."
    ],
    "reviewer_disposition": "conditional_and_nonempirical",
    "rights_status": "original prose; owner attestation pending",
-   "scope": "explicit two-branch simplification only",
+   "scope": "the five declared signal/licence rows of section 6 only, as an author protocol for ordering search actions under a hidden guardrail",
    "source_ids": [
     "file:publication/WORKING_NOTE_V5_DRAFT.md"
    ],
@@ -122,7 +122,7 @@
    "falsifier": "best-of-n is the prespecified estimand or a reported maximum is clearly labeled only as its selection statistic rather than expected configuration performance",
    "id": "C-METHOD-NOISY-MAX-001",
    "reproduction": [
-    "Inspect the manifested repeat lineage and the conditional wording in Section 8."
+    "Inspect the manifested repeat lineage and the conditional wording in Section 1."
    ],
    "reviewer_disposition": "conditional_and_clearly_labeled_recommendation",
    "rights_status": "original prose; owner attestation pending",
@@ -145,7 +145,7 @@
    "falsifier": "any released text or artifact includes non-public competitor artifacts, operational attack content, or a participant-versus-competitor performance or rank comparison",
    "id": "C-NONCLAIM-COMPETITOR-001",
    "reproduction": [
-    "python -I -B scripts/verify_release_v5.py"
+    "Read the released text against this entry's falsifier. No mechanical check enforces this non-claim: the verifier checks anchor presence and payload integrity, not the truth of a claim or the absence of a forbidden assertion."
    ],
    "reviewer_disposition": "must_hold",
    "rights_status": "mandatory release invariant",
@@ -166,7 +166,7 @@
    "falsifier": "any text presents the synthetic examples or public outcomes as a causal deployment result",
    "id": "C-NONCLAIM-DEPLOYMENT-001",
    "reproduction": [
-    "python -I -B scripts/verify_release_v5.py"
+    "Read the released text against this entry's falsifier. No mechanical check enforces this non-claim: the verifier checks anchor presence and payload integrity, not the truth of a claim or the absence of a forbidden assertion."
    ],
    "reviewer_disposition": "must_hold",
    "rights_status": "mandatory release invariant",
@@ -187,7 +187,7 @@
    "falsifier": "any text or artifact asserts or reconstructs inaccessible private behavior",
    "id": "C-NONCLAIM-PRIVATE-001",
    "reproduction": [
-    "python -I -B scripts/verify_release_v5.py"
+    "Read the released text against this entry's falsifier. No mechanical check enforces this non-claim: the verifier checks anchor presence and payload integrity, not the truth of a claim or the absence of a forbidden assertion."
    ],
    "reviewer_disposition": "must_hold",
    "rights_status": "mandatory release invariant",
@@ -227,7 +227,7 @@
    "falsifier": "any text asserts real-system applicability or exploitability from the bounded synthetic laboratory",
    "id": "C-NONCLAIM-TRANSFER-001",
    "reproduction": [
-    "python -I -B scripts/verify_release_v5.py"
+    "Read the released text against this entry's falsifier. No mechanical check enforces this non-claim: the verifier checks anchor presence and payload integrity, not the truth of a claim or the absence of a forbidden assertion."
    ],
    "reviewer_disposition": "must_hold",
    "rights_status": "mandatory release invariant",
