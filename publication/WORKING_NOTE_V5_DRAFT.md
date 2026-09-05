@@ -82,8 +82,8 @@ score, hard-codes the one-plus-four split in source, and its transaction stopped
 one send. Both artifacts carry the same evidentiary weight, and it is weaker than a
 digest. The
 record's other declared digest, a `6288`-byte preregistration, **no longer resolves**.
-That file has since been appended to and now differs in size and hash. A record that
-invites verification has to survive being verified, and this half did not. None of it
+That file has since been appended to and now differs in size and hash. This half of the
+record did not survive verification. None of it
 establishes that *this particular family and window* were chosen blind. That
 designation is author-reported, and is the premise the ledger's own falsifier targets.
 
@@ -257,7 +257,7 @@ On the defense track the collapse is unconditional. Both prefixes fold into one
 false-positive counter by a single tuple-prefix test in `aicomp_sdk/evaluation/ops.py`,
 which is the only channel by which either reaches the defense score.
 
-Two limits keep this honest. The label does survive in one place, the cell
+Two limits apply. The label does survive in one place, the cell
 signature's `guardrail_blocks` field, folded into the novelty hash. But it survives
 only for candidates that independently cleared the predicate gate, and only while the
 block stays inside that signature's three-event window. `SANITIZE` is not a
@@ -311,7 +311,7 @@ and the result does not depend on them.)
 One artifact retained essentially all of its score. The other retained three tenths
 of a point out of a hundred and four. Same bytes, same replay harness, same scoring
 predicates. What differed is the guardrail deciding which tool calls are permitted to
-succeed, which is the point, since that guardrail is the thing a competitor cannot
+succeed, and that guardrail is the thing a competitor cannot
 see.
 
 The result that matters is not that the private guardrail is stricter, which was
@@ -326,16 +326,19 @@ and one of them would change the lesson:
 
 | Mechanism | Fits the data? | What would separate it |
 |---|---|---|
-| The private guardrail responds differently to different artifacts | yes | artifacts spanning several predicate mixes, not two |
-| **A single predicate is blocked outright**, artifact-independently. Our stronger artifact scored almost entirely through one route, so closing that route zeroes it and leaves the other untouched | **yes, equally well** | a third artifact whose public score comes from a *different* predicate mix |
-| The residue is a floor, not a graded response, so the collapse carries roughly one bit (route blocked / not blocked) rather than a magnitude | yes | replicates spanning intermediate predicate mixes |
-| Replay variation, since the two boards are separate executions in fresh environments | unlikely at this magnitude, but observed on one artifact only | byte-identical replicates scored under both guardrails, which we do not have |
+| The guardrail responds differently to different artifacts | yes | artifacts spanning several predicate mixes, not two |
+| **A single predicate blocked outright**, artifact-independently | **yes, equally well** | a third artifact scoring through a *different* predicate mix |
+| A floor rather than a graded response, carrying about one bit | yes | replicates spanning intermediate predicate mixes |
+| Replay variation between two separate executions | unlikely at this magnitude, on one artifact | byte-identical replicates under both guardrails, which we lack |
 
-We cannot separate these. In particular the second row is a different claim from
-the first, with a different consequence for a builder. If one route is simply closed, the public-to-private map is **structured
-and learnable** and not capricious, and a benchmark builder should draw a different
-conclusion than if the instrument were artifact-sensitive. We have no control arm
-that distinguishes them, which by our own gate 3 means the mechanism stays unnamed.
+We cannot separate these. The second row deserves spelling out, because it fits the
+data exactly as well as the first and carries the opposite lesson. Our stronger
+artifact scored almost entirely through one route, so closing that route zeroes it
+and leaves the other untouched. If a single route is simply closed, the
+public-to-private map is **structured and learnable** and not capricious, and a
+benchmark builder should draw a different conclusion than if the instrument were
+artifact-sensitive. We have no control arm that distinguishes them, which by our own
+gate 3 means the mechanism stays unnamed.
 
 What survives all four rows is the narrow claim, and it is the one we make. A public
 leaderboard scored against a permissive guardrail **can** invert the ordering the
