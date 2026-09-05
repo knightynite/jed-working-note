@@ -80,11 +80,10 @@ timestamp is author-controllable, so it corroborates intent rather than proving 
 A second artifact, an allocation controller dated 18 hours 50 minutes before that same
 score, hard-codes the one-plus-four split in source, and its transaction stopped after
 one send. Both artifacts carry the same evidentiary weight, and it is weaker than a
-digest. The
-record's other declared digest, a `6288`-byte preregistration, **no longer resolves**.
-That file has since been appended to and now differs in size and hash. This half of the
-record did not survive verification. None of it
-establishes that *this particular family and window* were chosen blind. That
+digest. The record's other declared digest, a `6288`-byte preregistration, **no longer
+resolves**. That file has since been appended to and now differs in size and hash. This
+half of the record did not survive verification. None of it establishes that *this
+particular family and window* were chosen blind. That
 designation is author-reported, and is the premise the ledger's own falsifier targets.
 
 One disclosure bears on how the title reads. This competition did announce an
@@ -249,7 +248,7 @@ check it in about fifteen lines. Its guardrail returns one of four decisions
 (`ALLOW`, `DENY`, `CONFIRM`, `SANITIZE` in `aicomp_sdk/guardrails/base.py`), but the
 scored tool record carries no decision field, only a success boolean and a free-text
 `error` string in `aicomp_sdk/core/trace.py`, into which a block is written as the
-prefix `denied:` or `confirm_required:`. In the version we read, `aicomp-sdk` 1.4.2 from PyPI, the attack predicates gate on
+prefix `denied:` or `confirm_required:`. In the version we read, `aicomp-sdk` 3.1.2 from PyPI, the attack predicates gate on
 that boolean and none of them reads the string; the grading gateway discards any candidate that produced
 no predicate before a cell signature is formed. So a candidate whose only guardrail
 interaction is a block scores identically whether it was denied or merely deferred.
@@ -261,9 +260,11 @@ Two limits apply. The label does survive in one place, the cell
 signature's `guardrail_blocks` field, folded into the novelty hash. But it survives
 only for candidates that independently cleared the predicate gate, and only while the
 block stays inside that signature's three-event window. `SANITIZE` is not a
-non-execution at all, because it rewrites the arguments and proceeds, and so it
-scores like `ALLOW`. This is a derivation a reader can run against the published SDK
-(`pip install aicomp-sdk==1.4.2`), not a receipt we hold. It is a reading of one
+non-execution at all. It rewrites the arguments and proceeds, so it is scored from the
+resulting execution rather than as a block. This is a derivation a reader can run against the published SDK
+(`pip install aicomp-sdk==3.1.2`), where the merge is the single tuple-prefix test at
+`aicomp_sdk/evaluation/ops.py:718` feeding the false-positive counter at line 726.
+It is not a receipt we hold. It is a reading of one
 version, not a proof about every predicate the package may ever contain.
 
 This is a statement about test-suite design. It discovers nothing about any hidden
@@ -311,8 +312,7 @@ and the result does not depend on them.)
 One artifact retained essentially all of its score. The other retained three tenths
 of a point out of a hundred and four. Same bytes, same replay harness, same scoring
 predicates. What differed is the guardrail deciding which tool calls are permitted to
-succeed, and that guardrail is the thing a competitor cannot
-see.
+succeed, and that guardrail is the thing a competitor cannot see.
 
 The result that matters is not that the private guardrail is stricter, which was
 announced in advance. What matters is that **the public ranking of these two
@@ -335,9 +335,10 @@ We cannot separate these. The second row deserves spelling out, because it fits 
 data exactly as well as the first and carries the opposite lesson. Our stronger
 artifact scored almost entirely through one route, so closing that route zeroes it
 and leaves the other untouched. If a single route is simply closed, the
-public-to-private map is **structured and learnable** and not capricious, and a
+divergence follows a **simple predicate-level rule** and is not capricious, and a
 benchmark builder should draw a different conclusion than if the instrument were
-artifact-sensitive. We have no control arm that distinguishes them, which by our own
+artifact-sensitive. Whether such a rule could be learned from the feedback
+competitors actually receive is a further question we do not answer. We have no control arm that distinguishes them, which by our own
 gate 3 means the mechanism stays unnamed.
 
 What survives all four rows is the narrow claim, and it is the one we make. A public
@@ -353,7 +354,7 @@ sample standard deviation of `1.618804` on a mean of `119.606364`, a coefficient
 variation near 1.35%, which applied to row B's `25.800` would predict roughly `0.35`
 points of spread. Row B's two scores differ by `0.015`, well inside that predicted spread. One pair is
 weak evidence, but it points the right way. The two sections are not in conflict. §1's dispersion is
-measured *across fifteen separate submissions*, each with its own generation phase,
+measured *across the eleven baseline submissions*, each with its own generation phase,
 whereas the two scores in row B come from **one** generation phase replayed twice.
 The variance that dominates §1 is generation variance, and §5's pair does not
 contain any of it. That is what the organizers' FAQ describes, so the arithmetic is
@@ -365,8 +366,8 @@ One disclosure cuts both ways. These two artifacts
 were not a random pair. They were selected before the close as a deliberate straddle,
 because we had assigned meaningful probability to the branch in which the
 exfiltration-shaped artifact fails privately. That selection was **locked before the
-private values could exist**, so the comparison could not have been chosen after
-seeing its outcome. But it also means the pair was picked to span this contrast, so
+private values became readable to us**, so the comparison could not have been chosen
+after seeing its outcome. But it also means the pair was picked to span this contrast, so
 the *frequency* of such inversions in the wider field is not something these two
 points can speak to. It also undercuts one thing we might otherwise have said. We
 were not, in fact, optimizing blindly against the permissive guardrail. We read the
@@ -385,9 +386,8 @@ artifacts differently from the instrument that decides it. Our own campaign is a
 worked example of the cost. That campaign finished 52nd of 4,186 teams on the
 private board, a standing produced entirely by the artifact that did not collapse. The
 post-close record shows 251 submission attempts from this team, of which 89 completed,
-spent climbing a board that,
-for our stronger artifact, ranked it above one the private guardrail ranked far
-below.
+spent climbing a board that ranked
+Selection A above Selection B, while the private guardrail ranked A far below B.
 
 <!-- claim:C-GUARDRAIL-DIVERGENCE-001 -->
 
@@ -462,22 +462,23 @@ credit for it.
 Our §5 needs the same honesty. [JED-Xander] reports the public-versus-private
 divergence at **field scale**, across the whole leaderboard, from a source-level
 analysis published before the close. That is the stronger form of the observation.
-What our §5 adds is narrower and complementary, a **within-team paired**
-measurement in which both artifacts come from one generation phase, so the comparison
-isolates the guardrail from the generation variance that dominates a cross-team
-board. The §1 dispersion figures are what let us say that. They are the reason row
-B's tightness is informative and not lucky. A field-scale result establishes that the
-divergence is common. A paired one constrains what it can be attributed to.
+We drafted a claim that §5's within-team paired measurement was our
+addition, and it is false. That note's post-close revision reports the same shape:
+its strongest public artifact collapsed to zero privately while a benign hedge held
+its score on both boards, which is a within-team pair whose public ordering inverts.
+[JED-Radiant] independently selected two finals that deliberately differed in
+mechanism and read both boards, though both of its selections scored zero, so it
+reports a collapse rather than an inversion.
 
-[JED-Radiant] is nearer still, and the difference is worth stating precisely.
-That note also selected two finals that deliberately differed in mechanism, and
-read both boards after the close. Both of its selections scored zero privately, so
-it reports a **collapse** of both routes. Ours reports an **inversion**: one
-selection held at `25.815` while the other fell to `0.300`, so the public ordering
-of the pair reversed. Collapse and inversion carry different lessons for a
-benchmark designer. A collapse says the disclosed route does not transfer. An
-inversion says the public gradient can actively mislead a participant about which
-of two artifacts is better.
+So the inversion is not ours alone, and at least two other participants recorded a
+version of it before or alongside us. What we can still say is narrower. Our pair is
+reported with the §1 dispersion figures beside it, which is what lets a reader ask
+whether row B's tightness is informative, and §4 supplies a **measurement** result
+that the reachability analyses do not: within a declared corpus, the recorded
+decision label is necessary to separate a refusal from a deferral, and the benchmark
+does not carry it into the scored channels. That is a statement about what a suite
+can measure, not about what an attacker can reach, and it is the part of this note we
+would defend as new.
 
 Prior work supplies the ingredients. AgentDojo builds prompt-injection evaluation as
 an extensible environment, not a static list [AgentDojo]. InjecAgent reports
@@ -542,9 +543,11 @@ reader reproduces against the published package and not against anything we ship
 other two, the label-free ablation (26 of 28 pairs surviving deletion of the decision
 key, six equivalence classes, no separating suite at any size) and the *uniqueness*
 of the three-case suite, are not computed by `reproduce.py`, which reports a minimal
-suite without proving it the only one. Both follow from the released fixtures in
-roughly fifteen lines. Rebuild each case signature with the `decision` key removed,
-then re-run the same pairwise and subset searches. We state them as derivations a
+suite without proving it the only one. Each follows from the released fixtures in
+roughly fifteen lines, by a different procedure. For the ablation, rebuild each case
+signature with the `decision` key removed and re-run the pairwise and subset searches.
+For uniqueness, keep the label and enumerate *all* three-case subsets that separate
+all eight policies, counting them rather than stopping at the first. We state them as derivations a
 reader can check. We hold no receipt for either. §1's contiguous-window fraction
 (`1/12`) and §5's coefficient-of-variation arithmetic are likewise computed from the
 released values rather than emitted by the checkers.
@@ -593,8 +596,10 @@ submission outcome, read from the authenticated submissions endpoint. Those valu
 are of two kinds and §5 depends on the distinction. The fifteen campaign draws in §1
 are public scores, and the four values in §5 are the author's own public and
 **private** scores for the author's own two selected submissions, which became
-readable only after the close. No competitor's outcomes, public or private, are
-reproduced, and no private score belonging to anyone else is inferred.
+readable only after the close. Every score in the note's own dataset is the
+author's; §8 additionally cites outcomes that other participants published
+themselves, at the level of their stated propositions. No private score belonging to
+anyone else is inferred, and no competitor's non-public material is reproduced.
 
 <!-- claim:C-OFFICIAL-001 -->
 
@@ -626,14 +631,13 @@ formula. Pairwise distinguishability on seven cases does not imply completeness,
 a minimum suite for this family need not transfer. The ITT example illustrates
 selection bias. It does not prescribe a universal failure score. Content hashes
 establish identity, not authorship, correctness, or causal isolation. The campaign
-correction rests on a hash-bound baseline that fixes the prior-eleven group before
-the fresh scores existed, on a still author-reported designation of which family and
-window were chosen, and on an exchangeability assumption the released data lets
+correction rests on a hash-bound record of the prior-eleven group whose timing and
+blind designation are both author-reported, and on an exchangeability assumption the released data lets
 a reader reject.
 
 §5 carries limitations of its own, and they are sharper than §1's. It rests on two
-artifacts from one team, deliberately selected before the close to straddle the one it
-reports, so it establishes existence and says nothing about frequency or typical
+artifacts from one team, deliberately selected before the close to span the
+public-versus-private contrast §5 reports, so it establishes existence and says nothing about frequency or typical
 magnitude. It has no control arm separating the guardrail difference from the
 separate replay execution. Of the four candidate mechanisms §5 weighs, none is
 separated. Replay variation is unlikely at this magnitude but rests on one artifact.
